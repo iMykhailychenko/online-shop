@@ -1,0 +1,106 @@
+@import './normalize.css';
+@import './fonts.css';
+@import './var.css';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+}
+
+body {
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    color: var(--black);
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+picture,
+img {
+    display: block;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video,
+textarea {
+    vertical-align: middle;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background: none;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: inherit;
+}
+
+button,
+input,
+textarea {
+    font-weight: 400;
+    border-radius: var(--radius);
+    transition: 0.3s ease-in-out;
+    border: 0.1rem solid transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500;
+}
+
+.hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 0;
+    height: 1px;
+    width: 1px;
+    opacity: 0;
+    visibility: hidden;
+}

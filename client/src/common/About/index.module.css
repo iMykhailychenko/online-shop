@@ -1,0 +1,10 @@
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.flex p {
+    width: 48%;
+    font-size: 1.6rem;
+}

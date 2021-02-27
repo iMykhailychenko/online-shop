@@ -1,0 +1,19 @@
+.header {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    background: var(--yellow);
+    font-size: 1.2rem;
+}
+
+.btn {
+    padding: 0.3rem 0.6rem;
+    background: var(--white);
+    cursor: pointer;
+    border-radius: var(--radius);
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

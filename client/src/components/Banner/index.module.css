@@ -1,0 +1,57 @@
+.wrp {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    min-height: 40rem;
+    width: 100%;
+    margin: 10rem 0;
+}
+
+.main {
+    width: 100%;
+    padding: 4rem;
+    background: var(--green-01);
+    border-radius: var(--radius);
+    color: var(--green-02);
+}
+
+.title {
+    margin-bottom: 3rem;
+    font-size: 5rem;
+}
+
+.text {
+    font-size: 1.8rem;
+    max-width: 55rem;
+}
+
+.aside {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transform: translate(1rem, -0.3rem);
+    display: block;
+    min-height: 100%;
+    width: 4rem;
+}
+
+.socials {
+    position: sticky;
+    top: 5rem;
+    left: 0;
+}
+
+.link {
+    position: relative;
+    display: block;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--green-02);
+    transform-origin: 0 50%;
+    transition: 0.3s ease-in-out;
+}
+
+.link:hover {
+    transform: scale(1.2);
+}

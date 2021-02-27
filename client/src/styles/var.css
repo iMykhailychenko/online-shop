@@ -1,0 +1,15 @@
+:root {
+    --yellow: #f8d658;
+    --green-01: #dfece2;
+    --green-02: #32603f;
+    --white: #ffffff;
+    --black: #242424;
+    --gray-01: #FEFEFE;
+    --gray-02: #EEEEEE;
+    --gray-03: #AAAAAA;
+    --gray-04: #757575;
+    --gray-05: #373737;
+    --backdrop: rgba(0, 0, 0, 0.6);
+
+    --radius: 0.5rem;
+}
