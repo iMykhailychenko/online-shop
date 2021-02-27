@@ -6,15 +6,19 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 import { AppService } from './app.service';
 import { AppController } from './app.controller';
 import { PicturesController } from './pictures/pictures.controller';
+import { PicturesService } from './pictures/pictures.service';
+import { PicturesModule } from './pictures/pictures.module';
+
 @Module({
-  imports: [
-    ConfigModule.forRoot({ isGlobal: true }),
-    ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', '..', 'client'),
-      exclude: ['/api*'],
-    }),
-  ],
-  controllers: [AppController, PicturesController],
-  providers: [AppService],
+    imports: [
+        ConfigModule.forRoot({ isGlobal: true }),
+        ServeStaticModule.forRoot({
+            rootPath: join(__dirname, '..', '..', 'client'),
+            exclude: ['/api*'],
+        }),
+        PicturesModule,
+    ],
+    controllers: [AppController, PicturesController],
+    providers: [AppService, PicturesService],
 })
 export class AppModule {}
