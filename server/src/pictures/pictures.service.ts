@@ -1,21 +1,30 @@
 import { Injectable } from '@nestjs/common';
-import { GetPictureDto } from './dto/get-picture.dto';
 import axios, { AxiosPromise } from 'axios';
+import config from '../../assets/config';
+import { GetPictureDto } from './dto/get-picture.dto';
 
 @Injectable()
 export class PicturesService {
-    private pictures: any[] = [];
-    private page = 1;
-    private position = 0;
-    private maxPosition = 0;
+    private params = config().pixabay;
+    private data: GetPictureDto = { total: 0, totalHits: 0, hits: [] };
 
-    fetchPictures = async (params: GetPictureDto): Promise<AxiosPromise<void>> => {
+    fetchPictures = (index: number): Promise<AxiosPromise<GetPictureDto>> => {
+        const page = Math.floor(index / this.params.per_page) + 1;
+        const params = { ...this.params, page };
         return axios.get('https://pixabay.com/api/', { params });
     };
 
-    getPictures = async (params: GetPictureDto): Promise<string> => {
-        const { status, data } = await this.fetchPictures(params);
-        console.log({ status, data });
-        return '';
+    getPictures = async (index: number): Promise<string> => {
+        if (index >= this.data?.hits?.length && this.data?.hits?.length) {
+            const { data } = await this.fetchPictures(index);
+            this.data.hits = [...this.data.hits, ...data.hits];
+        }
+
+        if (!this.data?.hits?.length) {
+            const { data } = await this.fetchPictures(index);
+            this.data = data;
+        }
+
+        return this.data.hits[index].largeImageURL;
     };
 }

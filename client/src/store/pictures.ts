@@ -2,20 +2,29 @@ import { makeAutoObservable } from 'mobx';
 
 import api from '../assets/api';
 
-class Pictures {
-    page = 1;
-    loading = false;
-    data: any[] = [];
+interface IPictures {
+    index: number;
+    src: string | null;
+    setPicture: () => Promise<void>;
+}
+
+class Pictures implements IPictures {
+    public index = 58;
+    public src: string | null = null;
 
     constructor() {
         makeAutoObservable(this);
     }
 
-    getPicture = async (): Promise<void> => {
-        this.loading = true;
-        const { status, data } = await api.pictures(this.page);
-        console.log({ status, data });
-        this.data = data;
+    setPicture = async (): Promise<void> => {
+        try {
+            const { status, data } = await api.pictures(this.index);
+            if (status < 200 || status >= 300) throw new Error();
+            this.src = data;
+            this.index += 1;
+        } catch (error) {
+            console.dir(error);
+        }
     };
 }
 

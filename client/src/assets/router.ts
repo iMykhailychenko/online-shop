@@ -11,12 +11,12 @@ const router = {
     },
     profile: {
         path: '/profiles/:profile',
-        dynamic: (value: string): string => `/${value}`,
+        dynamic: (value: string | number): string => `/${value}`,
         component: lazy(() => import('../pages/profile' /* webpackChunkName: "profile-page" */)),
     },
     product: {
         path: '/products/:product',
-        dynamic: (value: string): string => `/${value}`,
+        dynamic: (value: string | number): string => `/${value}`,
         component: lazy(() => import('../pages/product' /* webpackChunkName: "product-page" */)),
     },
 };

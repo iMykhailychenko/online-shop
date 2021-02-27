@@ -6,11 +6,7 @@ import css from './index.module.css';
 const Footer = (): ReactElement => {
     return (
         <footer className={css.footer}>
-            <Container>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium assumenda autem delectus eius enim
-                expedita illum inventore itaque, laboriosam nam nulla obcaecati odio perspiciatis porro quasi rem
-                repellat reprehenderit temporibus!
-            </Container>
+            <Container>Lorem ipsum dolor sit amet</Container>
         </footer>
     );
 };

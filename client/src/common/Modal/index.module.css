@@ -1,0 +1,21 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.scroll {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    max-height: 100vh;
+    overflow-y: auto;
+}
