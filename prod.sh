@@ -21,5 +21,5 @@ mv ./client/build ./server/client
 # PUSH ON GIT
 ./git.sh
 
-
-# yarn --cwd ./server run start
+echo -n "${G}deploy${N}"
+cd ./server && git push heroku main
