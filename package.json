@@ -1,0 +1,19 @@
+{
+  "name": "online-shop",
+  "version": "1.0.0",
+  "description": "ONLINE SHOP",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm --prefix ./server/ run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iMykhailychenko/online-shop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iMykhailychenko/online-shop/issues"
+  },
+  "homepage": "https://github.com/iMykhailychenko/online-shop#readme"
+}

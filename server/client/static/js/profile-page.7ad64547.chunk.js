@@ -1,2 +1,0 @@
-(this["webpackJsonponline-shop"]=this["webpackJsonponline-shop"]||[]).push([[4],{61:function(n,e,i){"use strict";i.r(e);i(0);var s=i(1);e.default=function(){return Object(s.jsx)("div",{children:"Profile"})}}}]);
-//# sourceMappingURL=profile-page.7ad64547.chunk.js.map
