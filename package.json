@@ -4,7 +4,7 @@
   "description": "ONLINE SHOP",
   "main": "./server/dist/src/main.js",
   "scripts": {
-    "start": "npm --prefix ./server/ run start"
+    "start": "npm --prefix ./server/ run start:prod"
   },
   "repository": {
     "type": "git",
