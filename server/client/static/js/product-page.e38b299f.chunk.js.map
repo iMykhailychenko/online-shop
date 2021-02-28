@@ -1,1 +1,0 @@
-{"version":3,"sources":["pages/product/index.tsx"],"names":["Product"],"mappings":"iHAAA,uBAMeA,UAJC,WACZ,OAAO","file":"static/js/product-page.e38b299f.chunk.js","sourcesContent":["import React, { ReactElement } from 'react';\n\nconst Product = (): ReactElement => {\n    return <div>Product</div>;\n};\n\nexport default Product;\n"],"sourceRoot":""}
