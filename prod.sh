@@ -22,4 +22,4 @@ mv ./client/build ./server/client
 ./git.sh
 
 echo -n "${G}deploy${N}"
-cd ./server && git push heroku main
+git push heroku main
