@@ -1,8 +1,8 @@
 # compiled output
 dist
 node_modules
-./server/client/
-./server/build/
+server/client/
+server/build/
 
 # Logs
 logs
