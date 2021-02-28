@@ -71,12 +71,14 @@ const temp: Product[] = [
 ];
 
 interface IProducts {
+    loading: boolean;
     products: IPagination<Product[]>;
     element: HTMLDivElement | null;
     setElement: (dom: HTMLDivElement) => void;
 }
 
 class Products implements IProducts {
+    public loading = true;
     public products: IPagination<Product[]> = { total: 0, page: 0, data: [] };
     public element: HTMLDivElement | null = null;
 
@@ -89,9 +91,14 @@ class Products implements IProducts {
     };
 
     setProducts = () => {
+        this.loading = true;
+
+        // get data
         this.products.total = 5;
         this.products.page = 1;
         this.products.data = temp;
+
+        this.loading = false;
     };
 }
 

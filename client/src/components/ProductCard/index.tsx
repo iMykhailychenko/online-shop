@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import router from '../../assets/router';
 import { Product } from '../../interface';
+import ParallaxPicture from '../ParallaxPicture';
 import css from './index.module.css';
 
 interface IProps {
@@ -12,7 +13,7 @@ interface IProps {
 const ProductCard = ({ product }: IProps): ReactElement => {
     return (
         <div className={css.card}>
-            <img src={product.banner} alt={product.name} />
+            <ParallaxPicture src={product.banner} alt={product.name} images={product.images} />
 
             <Link className={css.content} to={router.product.dynamic(product.id)}>
                 <h3 className={css.name}>{product.name}</h3>

@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/profile/index.tsx"],"names":["Profile"],"mappings":"iHAAA,uBAMeA,UAJC,WACZ,OAAO","file":"static/js/profile-page.7ad64547.chunk.js","sourcesContent":["import React, { ReactElement } from 'react';\n\nconst Profile = (): ReactElement => {\n    return <div>Profile</div>;\n};\n\nexport default Profile;\n"],"sourceRoot":""}

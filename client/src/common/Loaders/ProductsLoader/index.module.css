@@ -1,0 +1,34 @@
+@keyframes loading {
+    0% {
+        background: var(--gray-02);
+    }
+
+    50% {
+        background: var(--gray-03);
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4rem;
+    margin: 10rem 0;
+}
+
+.img {
+    height: 40rem;
+    background: var(--gray-02);
+    animation: loading 3s ease-in-out infinite;
+}
+
+.text,
+.short {
+    height: 2.5rem;
+    margin: 2rem 0;
+    background: var(--gray-02);
+    animation: loading 3s ease-in-out infinite;
+}
+
+.short {
+    width: 50%;
+}

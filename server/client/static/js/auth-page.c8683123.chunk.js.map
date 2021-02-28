@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/auth/index.tsx"],"names":["Auth"],"mappings":"iHAAA,uBAMeA,UAJF,WACT,OAAO","file":"static/js/auth-page.c8683123.chunk.js","sourcesContent":["import React, { ReactElement } from 'react';\n\nconst Auth = (): ReactElement => {\n    return <div>Auth</div>;\n};\n\nexport default Auth;\n"],"sourceRoot":""}
