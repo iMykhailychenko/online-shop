@@ -2,7 +2,6 @@
 dist
 node_modules
 server/client/
-server/build/
 
 # Logs
 logs
@@ -21,6 +20,7 @@ coverage
 
 # IDEs and editors
 .idea
+.vscode
 .project
 .classpath
 .c9/
