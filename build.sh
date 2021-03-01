@@ -13,6 +13,6 @@ echo "cleaning"
 rm -rf ./server/client/
 
 echo "$sep"
- echo "replace client with new files"
- mv ./client/build ./server/client
+echo "replace client with new files"
+mv ./client/build ./server/client
 

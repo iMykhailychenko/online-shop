@@ -1,6 +1,8 @@
 sep="#############################################################"
 
-./build.sh
+rm -rf ./server/client/
+rm -rf ./client/build/
+
 ./git.sh
 
 echo "$sep"

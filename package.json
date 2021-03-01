@@ -4,7 +4,10 @@
   "description": "ONLINE SHOP",
   "main": "./server/dist/src/main.js",
   "scripts": {
-    "heroku-prebuild": "cd server && npm install",
+    "client": "cd ./client/ && npm install && npm run build && cd ../",
+    "server": "cd ./server/ && npm install && npm run build && cd ../",
+    "move": "rm -rf ./server/client/ && mv ./client/build ./server/client",
+    "heroku-prebuild": "npm run client && npm run server && npm run move",
     "start": "npm --prefix ./server/ run start:prod"
   },
   "repository": {
