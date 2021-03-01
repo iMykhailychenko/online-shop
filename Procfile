@@ -1,1 +1,1 @@
-web: npm run start
+web: npm --prefix ./server/ run start:prod
