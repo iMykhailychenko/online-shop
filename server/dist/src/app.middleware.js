@@ -6,15 +6,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppService = void 0;
+exports.FrontendMiddleware = void 0;
 const common_1 = require("@nestjs/common");
-let AppService = class AppService {
-    getHello() {
-        return 'Hello World!';
+const path_1 = require("path");
+let FrontendMiddleware = class FrontendMiddleware {
+    use(req, res, next) {
+        if (req.url.includes('/api')) {
+            next();
+        }
+        else {
+            res.sendFile(path_1.join(__dirname, '..', '..', 'client', 'index.html'));
+        }
     }
 };
-AppService = __decorate([
+FrontendMiddleware = __decorate([
     common_1.Injectable()
-], AppService);
-exports.AppService = AppService;
-//# sourceMappingURL=app.service.js.map
+], FrontendMiddleware);
+exports.FrontendMiddleware = FrontendMiddleware;
+//# sourceMappingURL=app.middleware.js.map

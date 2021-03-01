@@ -1,22 +1,27 @@
-import { Module } from '@nestjs/common';
-import { join } from 'path';
-import { ConfigModule } from '@nestjs/config';
+import { MiddlewareConsumer, Module, NestModule, RequestMethod } from '@nestjs/common';
 import { ServeStaticModule } from '@nestjs/serve-static';
+import { ConfigModule } from '@nestjs/config';
+import { join } from 'path';
 
-import { AppService } from './app.service';
-import { AppController } from './app.controller';
 import { PicturesModule } from './pictures/pictures.module';
+import { FrontendMiddleware } from './app.middleware';
 
 @Module({
     imports: [
         ConfigModule.forRoot({ isGlobal: true }),
         ServeStaticModule.forRoot({
             rootPath: join(__dirname, '..', '..', 'client'),
-            exclude: ['/api*'],
         }),
         PicturesModule,
     ],
-    controllers: [AppController],
-    providers: [AppService],
+    controllers: [],
+    providers: [],
 })
-export class AppModule {}
+export class AppModule implements NestModule {
+    configure(consumer: MiddlewareConsumer): void {
+        consumer.apply(FrontendMiddleware).forRoutes({
+            path: '/**',
+            method: RequestMethod.GET,
+        });
+    }
+}
