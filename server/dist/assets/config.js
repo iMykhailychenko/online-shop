@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = () => ({
-    port: parseInt(process.env.PORT, 10) || 3001,
+    port: +process.env.PORT || 3001,
     pixabay: {
         key: process.env.PIXABAY,
         per_page: 60,

@@ -11,6 +11,7 @@ interface IProps {
 }
 
 const ParallaxPicture = ({ src, alt, images }: IProps): ReactElement => {
+    console.log(images);
     return (
         <div className={css.wrp}>
             <div className={css.inner}>
