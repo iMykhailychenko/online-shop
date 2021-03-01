@@ -21,7 +21,7 @@ elif [[ -n "$COMMIT" ]]; then
         git commit -m "$COMMIT"
 fi
 
-git push
+#git push
 
 echo "$sep"
 echo "DONE WITH GIT"
