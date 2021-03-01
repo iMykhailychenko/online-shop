@@ -13,8 +13,6 @@ const config_1 = require("@nestjs/config");
 const serve_static_1 = require("@nestjs/serve-static");
 const app_service_1 = require("./app.service");
 const app_controller_1 = require("./app.controller");
-const pictures_controller_1 = require("./pictures/pictures.controller");
-const pictures_service_1 = require("./pictures/pictures.service");
 const pictures_module_1 = require("./pictures/pictures.module");
 let AppModule = class AppModule {
 };
@@ -28,8 +26,8 @@ AppModule = __decorate([
             }),
             pictures_module_1.PicturesModule,
         ],
-        controllers: [app_controller_1.AppController, pictures_controller_1.PicturesController],
-        providers: [app_service_1.AppService, pictures_service_1.PicturesService],
+        controllers: [app_controller_1.AppController],
+        providers: [app_service_1.AppService],
     })
 ], AppModule);
 exports.AppModule = AppModule;

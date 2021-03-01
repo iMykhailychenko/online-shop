@@ -5,8 +5,6 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 
 import { AppService } from './app.service';
 import { AppController } from './app.controller';
-import { PicturesController } from './pictures/pictures.controller';
-import { PicturesService } from './pictures/pictures.service';
 import { PicturesModule } from './pictures/pictures.module';
 
 @Module({
@@ -18,7 +16,7 @@ import { PicturesModule } from './pictures/pictures.module';
         }),
         PicturesModule,
     ],
-    controllers: [AppController, PicturesController],
-    providers: [AppService, PicturesService],
+    controllers: [AppController],
+    providers: [AppService],
 })
 export class AppModule {}

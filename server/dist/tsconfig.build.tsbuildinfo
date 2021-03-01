@@ -1486,14 +1486,9 @@
         "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
         "affectsGlobalScope": false
       },
-      "../src/pictures/interfaces/pictures.interfaces.ts": {
-        "version": "39abae497f02cf6f855f64988da24c12bc36a3633b1a1a994799bcf8c5c4db28",
-        "signature": "39abae497f02cf6f855f64988da24c12bc36a3633b1a1a994799bcf8c5c4db28",
-        "affectsGlobalScope": false
-      },
       "../src/pictures/dto/get-picture.dto.ts": {
-        "version": "3e6ba70c0643a6cebbb538b2fcff7dbb5cff758507285338f6ee0972012d745d",
-        "signature": "3b56d6b06c93dc41af7fd8b8e65c4f391c71dba65dc9cda3809ea9d269c6a3dd",
+        "version": "a359bbef0c27ec081940d00b88efd035a1b9370cc7d1f865e149d1d076e7b67e",
+        "signature": "2c436da045dfdac5f01585621cedc106d0d502a95af9f9419c0acae776eab023",
         "affectsGlobalScope": false
       },
       "../src/pictures/pictures.service.ts": {
@@ -1512,13 +1507,18 @@
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "4fdab879d4e1e22f51e7bd7f86148e984defb76d2dc6b1a3ade73e7f06b72b23",
+        "version": "acffa6dd2c4f309339949290f196e34ad4ec1226be41caad089f22392c3f6e7a",
         "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88",
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
         "version": "b58ab8af7c1e818e0398941d4211bd25cdaf1e25d5e968a56ad35fd2c1339883",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
+        "affectsGlobalScope": false
+      },
+      "../src/pictures/interfaces/pictures.interfaces.ts": {
+        "version": "39abae497f02cf6f855f64988da24c12bc36a3633b1a1a994799bcf8c5c4db28",
+        "signature": "39abae497f02cf6f855f64988da24c12bc36a3633b1a1a994799bcf8c5c4db28",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/anymatch/index.d.ts": {
@@ -3503,9 +3503,7 @@
         "../node_modules/@types/node/path.d.ts",
         "../src/app.controller.ts",
         "../src/app.service.ts",
-        "../src/pictures/pictures.controller.ts",
-        "../src/pictures/pictures.module.ts",
-        "../src/pictures/pictures.service.ts"
+        "../src/pictures/pictures.module.ts"
       ],
       "../src/app.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
@@ -3514,9 +3512,6 @@
         "../node_modules/@nestjs/config/index.d.ts",
         "../node_modules/@nestjs/core/index.d.ts",
         "../src/app.module.ts"
-      ],
-      "../src/pictures/dto/get-picture.dto.ts": [
-        "../src/pictures/interfaces/pictures.interfaces.ts"
       ],
       "../src/pictures/pictures.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -4952,9 +4947,6 @@
       ],
       "../src/app.controller.ts": [
         "../src/app.service.ts"
-      ],
-      "../src/pictures/dto/get-picture.dto.ts": [
-        "../src/pictures/interfaces/pictures.interfaces.ts"
       ],
       "../src/pictures/pictures.controller.ts": [
         "../src/pictures/pictures.service.ts"
