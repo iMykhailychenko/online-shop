@@ -23,7 +23,7 @@ elif [[ -n "$COMMIT" ]]; then
         git commit -m "$COMMIT"
 fi
 
-# git push
-# echo "${G}DONE WITH GIT #######${N}"
+git push
+echo "${G}DONE WITH GIT #######${N}"
 
 
