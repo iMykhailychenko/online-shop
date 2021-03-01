@@ -4,7 +4,7 @@
   "description": "ONLINE SHOP",
   "main": "./server/dist/src/main.js",
   "scripts": {
-    "heroku-prebuild": "npm --prefix ./server/ run install && npm --prefix ./server/ run build",
+    "heroku-prebuild": "npm --prefix ./server/ run install",
     "start": "npm --prefix ./server/ run start:prod"
   },
   "repository": {
