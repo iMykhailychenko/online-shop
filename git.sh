@@ -1,20 +1,18 @@
-# COLORS
-G='\033[0;32m' # green
-N='\033[0m' # none
+sep="#############################################################\n"
 
-# INPUT
-echo -n "${G}Commit message: ${N}"
+echo "$sep"
+echo -n "Commit message:"
 read COMMIT
 
-# BACKEND
-echo "${G}\n\nSTART UPLOADING #######${N}"
-
 # LINT
-echo "${G}LINTING #######${N}"
-#yarn run lint
+echo "$sep"
+echo "LINTING"
+npm --prefix ./client/ run lint
+npm --prefix ./server/ run lint
 
 # GIT
-echo "${G}\n\nPUSH ON GIT #######${N}"
+echo "$sep"
+echo "PUSH ON GIT"
 git add .
 
 if [[ -z "$COMMIT" ]]; then
@@ -24,6 +22,8 @@ elif [[ -n "$COMMIT" ]]; then
 fi
 
 git push
-echo "${G}DONE WITH GIT #######${N}"
+
+echo "$sep"
+echo "DONE WITH GIT"
 
 

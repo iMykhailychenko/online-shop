@@ -1,11 +1,18 @@
-echo -n "Compile build version:\n"
+sep="#############################################################\n"
 
-echo -n "build client"
+echo "$sep"
+echo "build client"
 npm --prefix ./client/ run build
 
-echo -n "build client"
+echo "$sep"
+echo "build client"
 npm --prefix ./server/ run build
 
-# echo -n "replace client with new files"
-# mv ./client/build ./server/client
+echo "$sep"
+echo "cleaning"
+rm -rf ./server/client/
+
+echo "$sep"
+ echo "replace client with new files"
+ mv ./client/build ./server/client
 

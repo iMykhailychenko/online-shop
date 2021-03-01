@@ -1,9 +1,7 @@
-# COLORS
-G='\033[0;32m' # green
-N='\033[0m' # none
-
+sep="#############################################################\n"
 # PUSH ON GIT
 ./git.sh
 
-echo -n "${G}deploy${N}"
+echo "$sep"
+echo "deploy"
 git push heroku main
