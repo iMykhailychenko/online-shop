@@ -1,1 +1,1 @@
-web: ls && npm --prefix ./server/ run start:prod
+web: cd ./server && ls && npm --prefix ./server/ run start:prod
