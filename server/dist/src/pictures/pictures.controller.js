@@ -20,14 +20,14 @@ let PicturesController = class PicturesController {
         this.picturesService = picturesService;
     }
     async findAll(index) {
-        return await this.picturesService.getPictures(+index);
+        return await this.picturesService.getPictures(index);
     }
 };
 __decorate([
     common_1.Get('/:index'),
-    __param(0, common_1.Param('index')),
+    __param(0, common_1.Param('index', new common_1.ParseIntPipe())),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
 ], PicturesController.prototype, "findAll", null);
 PicturesController = __decorate([
