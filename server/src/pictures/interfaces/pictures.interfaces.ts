@@ -1,4 +1,4 @@
-export default interface IPictures {
+export interface IPicture {
     comments: number;
     downloads: number;
     favorites: number;
@@ -21,4 +21,10 @@ export default interface IPictures {
     webformatHeight: number;
     webformatURL: string;
     webformatWidth: number;
+}
+
+export interface IPictures {
+    total: number;
+    totalHits: number;
+    hits: IPicture[];
 }

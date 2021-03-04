@@ -1,4 +1,5 @@
-import { MiddlewareConsumer, NestModule } from '@nestjs/common';
-export declare class AppModule implements NestModule {
-    configure(consumer: MiddlewareConsumer): void;
+import { Connection } from 'typeorm';
+export declare class AppModule {
+    private connection;
+    constructor(connection: Connection);
 }

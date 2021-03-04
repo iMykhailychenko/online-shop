@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import axios, { AxiosPromise } from 'axios';
 import config from '../../assets/config';
-import { GetPictureDto } from './dto/get-picture.dto';
+import { IPictures } from './interfaces/pictures.interfaces';
 
 @Injectable()
 export class PicturesService {
     private params = config().pixabay;
-    private data: GetPictureDto = { total: 0, totalHits: 0, hits: [] };
+    private data: IPictures = { total: 0, totalHits: 0, hits: [] };
 
-    fetchPictures = (index: number): Promise<AxiosPromise<GetPictureDto>> => {
+    fetchPictures = (index: number): Promise<AxiosPromise<IPictures>> => {
         const page = Math.floor(index / this.params.per_page) + 1;
         const params = { ...this.params, page };
         return axios.get('https://pixabay.com/api/', { params });
