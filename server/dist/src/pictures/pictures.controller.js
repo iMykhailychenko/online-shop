@@ -25,7 +25,7 @@ let PicturesController = class PicturesController {
 };
 __decorate([
     common_1.Get('/:index'),
-    __param(0, common_1.Param('index', new common_1.ParseIntPipe())),
+    __param(0, common_1.Param('index', new common_1.ParseIntPipe({ errorHttpStatusCode: common_1.HttpStatus.NOT_ACCEPTABLE }))),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
