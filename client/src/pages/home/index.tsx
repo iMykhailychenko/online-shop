@@ -4,9 +4,11 @@ import React, { ReactElement, useEffect, useRef } from 'react';
 import About from '../../common/About';
 import Banner from '../../components/Banner';
 import ProductsList from '../../components/ProductsList';
-import products from '../../store/products';
+import useStore from '../../hooks/store.hook';
+import IProducts from '../../store/products/products.types';
 
 const Home = (): ReactElement => {
+    const products = useStore<IProducts>(state => state.products);
     const ref = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {

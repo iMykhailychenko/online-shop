@@ -1,14 +1,9 @@
 import { makeAutoObservable } from 'mobx';
 
-import api from '../assets/api';
+import api from '../../assets/api';
+import IPictures from './pictures.types';
 
-interface IPictures {
-    index: number;
-    src: string | null;
-    setPicture: () => Promise<void>;
-}
-
-class Pictures implements IPictures {
+class Index implements IPictures {
     public index = 58;
     public src: string | null = null;
 
@@ -28,4 +23,4 @@ class Pictures implements IPictures {
     };
 }
 
-export default new Pictures();
+export default new Index();

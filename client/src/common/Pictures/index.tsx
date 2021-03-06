@@ -1,11 +1,13 @@
 import { observer } from 'mobx-react-lite';
 import React, { ReactElement, useEffect, useState } from 'react';
 
-import pictures from '../../store/pictures';
+import useStore from '../../hooks/store.hook';
+import IPictures from '../../store/pictures/pictures.types';
 import css from './index.module.css';
 
 const Pictures = (): ReactElement => {
     const [loading, setLoading] = useState<boolean>(true);
+    const pictures = useStore<IPictures>(state => state.pictures);
 
     const handleClick = async (): Promise<void> => {
         setLoading(true);

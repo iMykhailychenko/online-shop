@@ -1,8 +1,6 @@
 import { makeAutoObservable } from 'mobx';
 
-interface ICart {
-    products: number;
-}
+import ICart from './cart.types';
 
 class Cart implements ICart {
     public products = 0;

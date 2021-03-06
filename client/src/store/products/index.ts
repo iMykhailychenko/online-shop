@@ -1,6 +1,7 @@
 import { makeAutoObservable } from 'mobx';
 
-import { IPagination, Product } from '../interface';
+import { IPagination, Product } from '../../interface';
+import IProducts from './products.types';
 
 const temp: Product[] = [
     {
@@ -70,14 +71,7 @@ const temp: Product[] = [
     },
 ];
 
-interface IProducts {
-    loading: boolean;
-    products: IPagination<Product[]>;
-    element: HTMLDivElement | null;
-    setElement: (dom: HTMLDivElement) => void;
-}
-
-class Products implements IProducts {
+class Index implements IProducts {
     public loading = true;
     public products: IPagination<Product[]> = { total: 0, page: 0, data: [] };
     public element: HTMLDivElement | null = null;
@@ -102,4 +96,4 @@ class Products implements IProducts {
     };
 }
 
-export default new Products();
+export default new Index();

@@ -3181,6 +3181,11 @@
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
         "affectsGlobalScope": false
       },
+      "../src/products/products.entity.ts": {
+        "version": "aabf453b0ce49755d5f54383a692643b7a97fdae048a199ee59826533f8c12bf",
+        "signature": "c0dcb34f44dd465cc1324244a116cacd4dafd9b5ef1cc8b0164185245b6190f0",
+        "affectsGlobalScope": false
+      },
       "../node_modules/@types/anymatch/index.d.ts": {
         "version": "48b52264fa193879a074197839dbb4796fa07e86350ff888e5361e06aa46df76",
         "signature": "48b52264fa193879a074197839dbb4796fa07e86350ff888e5361e06aa46df76",
@@ -6454,6 +6459,9 @@
       "../src/products/products.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/products/products.service.ts"
+      ],
+      "../src/products/products.entity.ts": [
+        "../node_modules/typeorm/index.d.ts"
       ],
       "../src/products/products.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -9902,6 +9910,7 @@
       "../src/pictures/pictures.module.ts",
       "../src/pictures/pictures.service.ts",
       "../src/products/products.controller.ts",
+      "../src/products/products.entity.ts",
       "../src/products/products.module.ts",
       "../src/products/products.service.ts"
     ]
