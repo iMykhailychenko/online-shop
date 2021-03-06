@@ -6,7 +6,8 @@ import { Connection } from 'typeorm';
 import { join } from 'path';
 
 import { PicturesModule } from './pictures/pictures.module';
-import { getConnectionOptions } from 'typeorm';
+import { ProductsModule } from './products/products.module';
+import config from '../assets/config';
 
 @Module({
     imports: [
@@ -14,13 +15,13 @@ import { getConnectionOptions } from 'typeorm';
         ServeStaticModule.forRoot({
             rootPath: join(__dirname, '..', '..', 'client'),
         }),
-        TypeOrmModule.forRootAsync({
-            useFactory: async () =>
-                Object.assign(await getConnectionOptions(), {
-                    autoLoadEntities: true,
-                }),
+        TypeOrmModule.forRoot({
+            type: 'postgres',
+            entities: [],
+            ...config().db,
         }),
         PicturesModule,
+        ProductsModule,
     ],
     controllers: [],
     providers: [],

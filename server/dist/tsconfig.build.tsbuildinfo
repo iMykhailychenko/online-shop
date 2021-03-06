@@ -162,8 +162,8 @@
         "affectsGlobalScope": false
       },
       "../assets/config.ts": {
-        "version": "3e36fb312a13c1e863aa16cfc2f3139387863a732e51cc6f8a23ef47e69f83b1",
-        "signature": "b58c42a5445aff0c06d064011e4f6bcfce75e47d4f1c0c80d1abc9256d02c006",
+        "version": "2d4b4d27d856c973ee165eb321d68992194b0890cfe3e3a0c5b8f0fdb1768cef",
+        "signature": "2e133d28707934b0ac0524b6f90bb93588814594bf85a2fc979ab55a1cd80c7c",
         "affectsGlobalScope": false
       },
       "../node_modules/reflect-metadata/index.d.ts": {
@@ -3156,8 +3156,23 @@
         "signature": "ca66f673faaf7bca4ec3c7140eea0a071cefff2047e14a94d9d36d3a45df822c",
         "affectsGlobalScope": false
       },
+      "../src/products/products.service.ts": {
+        "version": "81cb55eecb1b69454ac81d7019b905fff4c14bb94e7adf24470de64b36338c24",
+        "signature": "9a15b15700c5af887d0cf0322c0bff8042a3e41b9e2dff97f7c074feb3f5fe27",
+        "affectsGlobalScope": false
+      },
+      "../src/products/products.controller.ts": {
+        "version": "3098e403d59717415b9a9c2b4b27491df42ca8aea4906429c1c6cbab648f5c8c",
+        "signature": "62a32c4edf06d507146d7586c8a915c35c3f1e050b223aed184b89d6febc1fed",
+        "affectsGlobalScope": false
+      },
+      "../src/products/products.module.ts": {
+        "version": "193a4ffab4de3b42f328304dbaec266379d19248aadf8b06b196362bece898c5",
+        "signature": "8857a2a959eb0ee870d0adb812e0d41a0e12796ec0c1d85f8416e82bcf51ca03",
+        "affectsGlobalScope": false
+      },
       "../src/app.module.ts": {
-        "version": "a016bda02cef2be975bfa6f28a60f6b192c8bcce9567ffc2c4cd3d082d90dc7b",
+        "version": "ce042de0a7e12ffcc4496ab45106c9c013abc72d3c0a66ea16833689e52914e0",
         "signature": "15a7a2df96a0044b095d9658ac63e44331c417dfcc6f817fc8fd979232df5df1",
         "affectsGlobalScope": false
       },
@@ -6406,13 +6421,15 @@
         "../node_modules/typeorm/query-runner/queryrunner.d.ts"
       ],
       "../src/app.module.ts": [
+        "../assets/config.ts",
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/config/index.d.ts",
         "../node_modules/@nestjs/serve-static/index.d.ts",
         "../node_modules/@nestjs/typeorm/index.d.ts",
         "../node_modules/@types/node/path.d.ts",
         "../node_modules/typeorm/index.d.ts",
-        "../src/pictures/pictures.module.ts"
+        "../src/pictures/pictures.module.ts",
+        "../src/products/products.module.ts"
       ],
       "../src/main.ts": [
         "../node_modules/@nestjs/config/index.d.ts",
@@ -6433,6 +6450,18 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/axios/index.d.ts",
         "../src/pictures/interfaces/pictures.interfaces.ts"
+      ],
+      "../src/products/products.controller.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/products/products.service.ts"
+      ],
+      "../src/products/products.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/products/products.controller.ts",
+        "../src/products/products.service.ts"
+      ],
+      "../src/products/products.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts"
       ]
     },
     "exportedModulesMap": {
@@ -9125,6 +9154,9 @@
       "../src/pictures/pictures.service.ts": [
         "../node_modules/axios/index.d.ts",
         "../src/pictures/interfaces/pictures.interfaces.ts"
+      ],
+      "../src/products/products.controller.ts": [
+        "../src/products/products.service.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -9868,7 +9900,10 @@
       "../src/pictures/interfaces/pictures.interfaces.ts",
       "../src/pictures/pictures.controller.ts",
       "../src/pictures/pictures.module.ts",
-      "../src/pictures/pictures.service.ts"
+      "../src/pictures/pictures.service.ts",
+      "../src/products/products.controller.ts",
+      "../src/products/products.module.ts",
+      "../src/products/products.service.ts"
     ]
   },
   "version": "4.2.2"

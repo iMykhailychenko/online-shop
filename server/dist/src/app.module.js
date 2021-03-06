@@ -17,7 +17,8 @@ const config_1 = require("@nestjs/config");
 const typeorm_2 = require("typeorm");
 const path_1 = require("path");
 const pictures_module_1 = require("./pictures/pictures.module");
-const typeorm_3 = require("typeorm");
+const products_module_1 = require("./products/products.module");
+const config_2 = require("../assets/config");
 let AppModule = class AppModule {
     constructor(connection) {
         this.connection = connection;
@@ -30,12 +31,9 @@ AppModule = __decorate([
             serve_static_1.ServeStaticModule.forRoot({
                 rootPath: path_1.join(__dirname, '..', '..', 'client'),
             }),
-            typeorm_1.TypeOrmModule.forRootAsync({
-                useFactory: async () => Object.assign(await typeorm_3.getConnectionOptions(), {
-                    autoLoadEntities: true,
-                }),
-            }),
+            typeorm_1.TypeOrmModule.forRoot(Object.assign({ type: 'postgres', entities: [] }, config_2.default().db)),
             pictures_module_1.PicturesModule,
+            products_module_1.ProductsModule,
         ],
         controllers: [],
         providers: [],
