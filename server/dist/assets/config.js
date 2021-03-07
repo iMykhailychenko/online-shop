@@ -18,6 +18,9 @@ exports.default = () => ({
         database: process.env.DB_NAME,
         ssl: Boolean(process.env.DB_SSL),
         synchronize: true,
+        dialectOptions: {
+            ssl: { require: Boolean(process.env.DB_SSL) },
+        },
     },
 });
 //# sourceMappingURL=config.js.map

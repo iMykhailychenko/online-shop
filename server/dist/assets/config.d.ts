@@ -16,6 +16,11 @@ declare const _default: () => {
         database: string;
         ssl: boolean;
         synchronize: boolean;
+        dialectOptions: {
+            ssl: {
+                require: boolean;
+            };
+        };
     };
 };
 export default _default;
