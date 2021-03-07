@@ -7,6 +7,7 @@ type Element = JSX.Element[] | JSX.Element | null;
 
 class ModalManagement extends EventEmitter {
     public dom: Element;
+    public scrollY = 0;
 
     constructor() {
         super();
@@ -18,11 +19,26 @@ class ModalManagement extends EventEmitter {
 
     open(dom: Element): void {
         this.dom = dom;
+
+        // styles
+        this.scrollY = window.scrollY;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${this.scrollY}px`;
+        document.body.style.paddingRight = '10px';
+
+        // emit
         this.emitChange();
     }
 
     close(): void {
         this.dom = null;
+
+        // styles
+        document.body.style.position = '';
+        document.body.style.top = '0';
+        document.body.style.paddingRight = '';
+        window.scrollTo({ top: this.scrollY });
+        // emit
         this.emitChange();
     }
 

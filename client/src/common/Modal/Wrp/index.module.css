@@ -1,0 +1,21 @@
+.modal {
+    width: 90%;
+    background: var(--white);
+    border-radius: var(--radius);
+}
+
+.small {
+    max-width: 40rem;
+}
+
+.mid {
+    max-width: 80rem;
+}
+
+.big {
+    max-width: 90%;
+}
+
+.inner {
+    padding: 1rem 2rem 2rem;
+}

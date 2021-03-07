@@ -1,6 +1,6 @@
 .wrp {
     position: relative;
-    padding: 4rem;
+    padding: 4rem 4rem 2rem;
     height: 40rem;
     width: 100%;
     transform-style: preserve-3d;
@@ -55,4 +55,5 @@
     background: var(--gray-01);
     border-radius: 50%;
     opacity: 0;
+    pointer-events: none;
 }

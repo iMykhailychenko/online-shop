@@ -2,6 +2,8 @@ import { faExpandArrowsAlt } from '@fortawesome/free-solid-svg-icons/faExpandArr
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { MouseEvent, ReactElement, useRef } from 'react';
 
+import { modal } from '../../common/Modal';
+import BigModal from '../../common/Modal/Wrp/BigModal';
 import css from './index.module.css';
 
 interface IProps {
@@ -26,8 +28,25 @@ const ParallaxPicture = ({ src, alt }: IProps): ReactElement => {
         if (ref.current) ref.current.style.transform = 'rotateX(0)';
     };
 
+    const handleModal = (): void => {
+        modal.open(
+            <BigModal>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, animi beatae deleniti eveniet
+                exercitationem harum id illo molestias mollitia neque perferendis quas saepe voluptatem? Atque
+                distinctio esse quas quis tenetur?
+            </BigModal>,
+        );
+    };
+
     return (
-        <div className={css.wrp} onMouseMove={startRotate} onMouseOut={stopRotate} onBlur={stopRotate}>
+        <div
+            className={css.wrp}
+            onClick={handleModal}
+            onMouseMove={startRotate}
+            onMouseOut={stopRotate}
+            onBlur={stopRotate}
+            aria-hidden
+        >
             <div ref={ref} className={css.parallax}>
                 <div className={css.inner}>
                     <button className={css.btn} type="button">
