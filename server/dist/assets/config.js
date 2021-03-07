@@ -16,6 +16,7 @@ exports.default = () => ({
         username: process.env.DB_USER_NAME,
         password: process.env.DB_USER_PASSWORD,
         database: process.env.DB_NAME,
+        ssl: Boolean(process.env.DB_SSL),
         synchronize: true,
     },
 });
