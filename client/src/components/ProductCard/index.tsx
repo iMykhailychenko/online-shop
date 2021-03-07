@@ -10,6 +10,8 @@ interface IProps {
     product: Product;
 }
 
+const MAX_CONTENT = 150;
+
 const ProductCard = ({ product }: IProps): ReactElement => {
     return (
         <div className={css.card}>
@@ -17,7 +19,11 @@ const ProductCard = ({ product }: IProps): ReactElement => {
 
             <Link className={css.content} to={router.product.dynamic(product.id)}>
                 <h3 className={css.name}>{product.title}</h3>
-                <p className={css.description}>{product.description}</p>
+                <p className={css.description}>
+                    {product.description.length > MAX_CONTENT
+                        ? product.description.slice(0, MAX_CONTENT) + '...'
+                        : product.description}
+                </p>
             </Link>
         </div>
     );
