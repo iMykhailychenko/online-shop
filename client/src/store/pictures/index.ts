@@ -4,7 +4,7 @@ import api from '../../assets/api';
 import IPictures from './pictures.types';
 
 class Index implements IPictures {
-    public index = 58;
+    public index = 0;
     public src: string | null = null;
 
     constructor() {

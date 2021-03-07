@@ -8,6 +8,7 @@ import { join } from 'path';
 import { PicturesModule } from './pictures/pictures.module';
 import { ProductsModule } from './products/products.module';
 import config from '../assets/config';
+import { Product } from './products/products.entity';
 
 @Module({
     imports: [
@@ -17,7 +18,7 @@ import config from '../assets/config';
         }),
         TypeOrmModule.forRoot({
             type: 'postgres',
-            entities: [],
+            entities: [Product],
             ...config().db,
         }),
         PicturesModule,

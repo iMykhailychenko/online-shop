@@ -13,10 +13,10 @@ interface IProps {
 const ProductCard = ({ product }: IProps): ReactElement => {
     return (
         <div className={css.card}>
-            <ParallaxPicture src={product.banner} alt={product.name} images={product.images} />
+            <ParallaxPicture src={product.banner} alt={product.title} images={product.images} />
 
             <Link className={css.content} to={router.product.dynamic(product.id)}>
-                <h3 className={css.name}>{product.name}</h3>
+                <h3 className={css.name}>{product.title}</h3>
                 <p className={css.description}>{product.description}</p>
             </Link>
         </div>

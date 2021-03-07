@@ -1,7 +1,7 @@
-export interface IPagination<T> {
+export interface IPagination<Data> {
     total: number;
     page: number;
-    data: T;
+    data: Data;
 }
 
 export interface Product {
@@ -9,8 +9,8 @@ export interface Product {
     banner: string;
     images?: string[];
     price: number;
-    total: number;
-    name: string;
+    amount: number;
+    title: string;
     description: string;
     rating: number;
 }

@@ -162,7 +162,7 @@
         "affectsGlobalScope": false
       },
       "../assets/config.ts": {
-        "version": "2d4b4d27d856c973ee165eb321d68992194b0890cfe3e3a0c5b8f0fdb1768cef",
+        "version": "207e32e2ab4950b56f26b5a1350e330c70895817b71a67f842fd81124e62f9c7",
         "signature": "2e133d28707934b0ac0524b6f90bb93588814594bf85a2fc979ab55a1cd80c7c",
         "affectsGlobalScope": false
       },
@@ -3156,34 +3156,34 @@
         "signature": "ca66f673faaf7bca4ec3c7140eea0a071cefff2047e14a94d9d36d3a45df822c",
         "affectsGlobalScope": false
       },
+      "../src/products/products.entity.ts": {
+        "version": "7fa225d8b32d7806c8987b8d38ac32c63713eb7ddcef8ffd6e1ceef6ff4e8154",
+        "signature": "ce460ae14e82419278beedb1ddce71e5670ae0fea10fdcd99e23c1ec68eaeef8",
+        "affectsGlobalScope": false
+      },
       "../src/products/products.service.ts": {
-        "version": "81cb55eecb1b69454ac81d7019b905fff4c14bb94e7adf24470de64b36338c24",
-        "signature": "9a15b15700c5af887d0cf0322c0bff8042a3e41b9e2dff97f7c074feb3f5fe27",
+        "version": "0c5b0f0d9a3b4a9d761193320021c2adb8feed2d91c35d4307d3d9f68c28606f",
+        "signature": "ea3e0d13b1a311fa9524142d4854e898178546bdd1d3f03cb0808224838e66f1",
         "affectsGlobalScope": false
       },
       "../src/products/products.controller.ts": {
-        "version": "3098e403d59717415b9a9c2b4b27491df42ca8aea4906429c1c6cbab648f5c8c",
-        "signature": "62a32c4edf06d507146d7586c8a915c35c3f1e050b223aed184b89d6febc1fed",
+        "version": "8a0c787029de3ec72c0a6866a44cf1e3991af2d91b18028d5844872aff083d3c",
+        "signature": "74dc447ab903ece3497ce4c04179d7d72e931fa97cb843ea01819a522f133147",
         "affectsGlobalScope": false
       },
       "../src/products/products.module.ts": {
-        "version": "193a4ffab4de3b42f328304dbaec266379d19248aadf8b06b196362bece898c5",
+        "version": "c7666bacdf5e45a199080d3339d166b1efe3e909a0e44a7b61a7106348f82894",
         "signature": "8857a2a959eb0ee870d0adb812e0d41a0e12796ec0c1d85f8416e82bcf51ca03",
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "ce042de0a7e12ffcc4496ab45106c9c013abc72d3c0a66ea16833689e52914e0",
+        "version": "7a79f04ffaefec06331409f027678990a4269dae939e4d172788630313f61556",
         "signature": "15a7a2df96a0044b095d9658ac63e44331c417dfcc6f817fc8fd979232df5df1",
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
         "version": "1d59b88888383204c8e06bbb5e8cdea8815acb495626fd4f8e1f10d5db0f76b3",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
-        "affectsGlobalScope": false
-      },
-      "../src/products/products.entity.ts": {
-        "version": "aabf453b0ce49755d5f54383a692643b7a97fdae048a199ee59826533f8c12bf",
-        "signature": "c0dcb34f44dd465cc1324244a116cacd4dafd9b5ef1cc8b0164185245b6190f0",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/anymatch/index.d.ts": {
@@ -6434,6 +6434,7 @@
         "../node_modules/@types/node/path.d.ts",
         "../node_modules/typeorm/index.d.ts",
         "../src/pictures/pictures.module.ts",
+        "../src/products/products.entity.ts",
         "../src/products/products.module.ts"
       ],
       "../src/main.ts": [
@@ -6465,11 +6466,16 @@
       ],
       "../src/products/products.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
         "../src/products/products.controller.ts",
+        "../src/products/products.entity.ts",
         "../src/products/products.service.ts"
       ],
       "../src/products/products.service.ts": [
-        "../node_modules/@nestjs/common/index.d.ts"
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../src/products/products.entity.ts"
       ]
     },
     "exportedModulesMap": {
@@ -9165,6 +9171,10 @@
       ],
       "../src/products/products.controller.ts": [
         "../src/products/products.service.ts"
+      ],
+      "../src/products/products.service.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/products/products.entity.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [

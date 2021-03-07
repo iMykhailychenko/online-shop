@@ -11,7 +11,6 @@ import css from './index.module.css';
 
 const Header = (): ReactElement => {
     const history = useHistory();
-    console.log(history.location.pathname);
 
     useEffect(() => {
         if (history.location.hash === '#products' && products.element) {

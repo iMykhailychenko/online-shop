@@ -1,9 +1,16 @@
-.wrp,
-.inner {
+.wrp {
     position: relative;
+    padding: 4rem;
     height: 40rem;
     width: 100%;
-    transition: 0.3s ease-in-out;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: 0.2s;
+}
+
+.inner {
+    width: 100%;
+    height: 100%;
 }
 
 .inner::before {
@@ -15,19 +22,25 @@
     height: 100%;
     background: var(--backdrop);
     opacity: 0;
-    transition: 0.3s ease-in-out;
     cursor: pointer;
 }
 
-.inner:hover::before,
-.inner:hover .btn {
+.wrp:hover .inner::before,
+.wrp:hover .btn {
     opacity: 1;
+}
+
+.parallax {
+    height: 100%;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: 0.2s;
 }
 
 .img {
     display: block;
     width: 100%;
-    height: 40rem;
+    height: 100%;
     object-fit: cover;
     cursor: pointer;
 }
@@ -36,7 +49,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) translateZ(100px);
     height: 6rem;
     width: 6rem;
     background: var(--gray-01);
