@@ -1,6 +1,6 @@
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons/faShoppingCart';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { moneyFormat } from '../../assets/helpers';
@@ -17,6 +17,7 @@ interface IProps {
 const MAX_CONTENT = 150;
 
 const ProductCard = ({ product }: IProps): ReactElement => {
+    const [value, setValue] = useState<number | string>(1);
     return (
         <div className={css.card}>
             <ParallaxPicture src={product.banner} alt={product.title} images={product.images} />
@@ -31,14 +32,12 @@ const ProductCard = ({ product }: IProps): ReactElement => {
             </Link>
 
             <div className={css.flex}>
-                <p>{moneyFormat(product.price)} $</p>
+                <p>{moneyFormat(Math.round(product.price * (!+value ? 1 : +value) * 100) / 100)} $</p>
                 <p>amount: {product.amount}</p>
             </div>
 
-            <pre>{product.pictures}</pre>
-
             <div className={css.flex}>
-                <CountButtons max={product.amount} />
+                <CountButtons max={product.amount} value={value} onChange={setValue} />
 
                 <div className={css.action}>
                     <button className={css.cart} type="button">

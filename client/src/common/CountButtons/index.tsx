@@ -1,41 +1,41 @@
 import clsx from 'clsx';
-import React, { ChangeEvent, ReactElement, useState } from 'react';
+import React, { ChangeEvent, ReactElement } from 'react';
 
 import css from './index.module.css';
 
 interface IProps {
     className?: string;
     max: number;
+    value: number | string;
+    onChange: (value: number | string) => void;
 }
 
-const CountButtons = ({ max, className }: IProps): ReactElement => {
-    const [value, setValue] = useState<number | string>(0);
-
+const CountButtons = ({ max, className, onChange, value }: IProps): ReactElement => {
     const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
         if (event.target.value === '') {
-            setValue('');
+            onChange('');
             return;
         }
 
         if (!+event.target.value) return;
-        setValue(+event.target.value);
+        onChange(+event.target.value);
     };
 
     const plus = (): void => {
-        setValue(value => (+value >= max ? max : +value + 1));
+        onChange(+value >= max ? max : +value + 1);
     };
 
     const minus = (): void => {
-        setValue(value => (+value <= 0 ? 0 : +value - 1));
+        onChange(+value <= 0 ? 0 : +value - 1);
     };
 
     const handleBlur = (): void => {
         if (+value >= max) {
-            setValue(max);
+            onChange(max);
             return;
         }
 
-        if (+value <= 0) setValue(0);
+        if (+value <= 0) onChange(0);
     };
 
     return (
