@@ -1,4 +1,40 @@
+.card {
+    margin-bottom: 4rem;
+}
+
 .content {
     display: block;
     margin: 0 4rem;
+}
+
+.content:hover {
+    text-decoration: underline;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 8rem);
+    margin: 2rem 4rem;
+}
+
+.cart,
+.bay {
+    padding: 0.5rem 2rem;
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+}
+
+.bay {
+    color: var(--white);
+    background: var(--blue);
+}
+
+.cart {
+    margin-right: 1rem;
+    color: var(--gray-05);
+}
+
+.cart:hover {
+    background: var(--gray-02);
 }

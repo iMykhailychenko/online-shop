@@ -1,7 +1,11 @@
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons/faShoppingCart';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 
+import { moneyFormat } from '../../assets/helpers';
 import router from '../../assets/router';
+import CountButtons from '../../common/CountButtons';
 import { Product } from '../../interface';
 import ParallaxPicture from '../ParallaxPicture';
 import css from './index.module.css';
@@ -25,6 +29,24 @@ const ProductCard = ({ product }: IProps): ReactElement => {
                         : product.description}
                 </p>
             </Link>
+
+            <div className={css.flex}>
+                <p>{moneyFormat(product.price)} $</p>
+                <p>amount: {product.amount}</p>
+            </div>
+
+            <div className={css.flex}>
+                <CountButtons max={product.amount} />
+
+                <div className={css.action}>
+                    <button className={css.cart} type="button">
+                        <FontAwesomeIcon icon={faShoppingCart} />
+                    </button>
+                    <button className={css.bay} type="button">
+                        Bay
+                    </button>
+                </div>
+            </div>
         </div>
     );
 };

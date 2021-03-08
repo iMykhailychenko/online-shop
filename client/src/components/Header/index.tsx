@@ -17,7 +17,7 @@ const Header = (): ReactElement => {
             window.scrollTo({ top: products.element.offsetTop - 100, behavior: 'smooth' });
             history.push(router.home.path);
         }
-    }, [products.element]);
+    }, [products.element, history.location.pathname]);
 
     return (
         <header className={css.header}>
