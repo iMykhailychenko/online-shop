@@ -20,6 +20,7 @@ const pictures_module_1 = require("./pictures/pictures.module");
 const products_module_1 = require("./products/products.module");
 const config_2 = require("../assets/config");
 const products_entity_1 = require("./products/products.entity");
+const pictures_entity_1 = require("./products/pictures.entity");
 let AppModule = class AppModule {
     constructor(connection) {
         this.connection = connection;
@@ -32,7 +33,7 @@ AppModule = __decorate([
             serve_static_1.ServeStaticModule.forRoot({
                 rootPath: path_1.join(__dirname, '..', '..', 'client'),
             }),
-            typeorm_1.TypeOrmModule.forRoot(Object.assign({ type: 'postgres', entities: [products_entity_1.Product] }, config_2.default().db)),
+            typeorm_1.TypeOrmModule.forRoot(Object.assign({ type: 'postgres', entities: [products_entity_1.Product, pictures_entity_1.Pictures] }, config_2.default().db)),
             pictures_module_1.PicturesModule,
             products_module_1.ProductsModule,
         ],

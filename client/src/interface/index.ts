@@ -13,4 +13,5 @@ export interface Product {
     title: string;
     description: string;
     rating: number;
+    pictures: string[];
 }

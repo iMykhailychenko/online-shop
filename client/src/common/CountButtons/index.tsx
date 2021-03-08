@@ -9,7 +9,7 @@ interface IProps {
 }
 
 const CountButtons = ({ max, className }: IProps): ReactElement => {
-    const [value, setValue] = useState<number | string>('');
+    const [value, setValue] = useState<number | string>(0);
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
         if (event.target.value === '') {

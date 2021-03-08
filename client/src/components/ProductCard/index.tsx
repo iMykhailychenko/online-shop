@@ -35,6 +35,8 @@ const ProductCard = ({ product }: IProps): ReactElement => {
                 <p>amount: {product.amount}</p>
             </div>
 
+            <pre>{product.pictures}</pre>
+
             <div className={css.flex}>
                 <CountButtons max={product.amount} />
 
