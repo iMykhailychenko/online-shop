@@ -3,15 +3,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { ReactElement, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { moneyFormat } from '../../assets/helpers';
-import router from '../../assets/router';
-import CountButtons from '../../common/CountButtons';
-import { Product } from '../../interface';
+import { moneyFormat } from '../../../assets/helpers';
+import router from '../../../assets/router';
+import { IProduct } from '../../../interface';
+import CountButtons from '../CountButtons';
 import ParallaxPicture from '../ParallaxPicture';
 import css from './index.module.css';
 
 interface IProps {
-    product: Product;
+    product: IProduct;
 }
 
 const MAX_CONTENT = 150;

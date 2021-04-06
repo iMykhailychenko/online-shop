@@ -1,10 +1,12 @@
 import React, { ReactElement, Suspense } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import router from '../assets/router';
-import Body from '../components/Body';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
+import router from '../../assets/router';
+import CartDrawer from '../common/Drawer/CartDrawer';
+import ScrollTop from '../common/ScrollTopBtn';
+import Body from '../layout/Body';
+import Footer from '../layout/Footer';
+import Header from '../layout/Header';
 import css from './index.module.css';
 
 const App = (): ReactElement => {
@@ -21,6 +23,8 @@ const App = (): ReactElement => {
                             <Route path={router.profile.path} component={router.profile.component} />
                         </Switch>
                     </Body>
+                    <CartDrawer />
+                    <ScrollTop />
                     <Footer />
                 </div>
             </BrowserRouter>

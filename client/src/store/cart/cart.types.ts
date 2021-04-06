@@ -1,3 +1,6 @@
+import { ICartProduct } from '../../interface';
+
 export default interface ICart {
-    products: number;
+    amount: number;
+    products: ICartProduct[];
 }

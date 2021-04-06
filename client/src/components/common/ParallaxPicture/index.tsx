@@ -2,8 +2,8 @@ import { faExpandArrowsAlt } from '@fortawesome/free-solid-svg-icons/faExpandArr
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { MouseEvent, ReactElement, useRef } from 'react';
 
-import { modal } from '../../common/Modal';
-import BigModal from '../../common/Modal/Wrp/BigModal';
+import { modal } from '../Modal';
+import BigModal from '../Modal/Wrp/BigModal';
 import css from './index.module.css';
 
 interface IProps {

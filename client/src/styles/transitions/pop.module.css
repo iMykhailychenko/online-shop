@@ -1,0 +1,21 @@
+.enter {
+    transform: scale(0);
+    opacity: 0;
+}
+
+.enterActive {
+    transform: scale(1);
+    opacity: 1;
+    transition: 300ms cubic-bezier(0.55, -0.44, 0.46, 1.47);
+}
+
+.exit {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.exitActive {
+    transform: scale(0);
+    opacity: 0;
+    transition: 300ms cubic-bezier(0.55, -0.44, 0.46, 1.47);
+}

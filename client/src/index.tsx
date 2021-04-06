@@ -3,9 +3,9 @@ import './styles/styles.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import ModalComponent from './common/Modal';
+import ModalComponent from './components/common/Modal';
+import App from './components/root/App';
 import reportWebVitals from './reportWebVitals';
-import App from './root/App';
 
 ReactDOM.render(
     <React.StrictMode>

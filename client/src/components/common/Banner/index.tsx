@@ -4,7 +4,7 @@ import { faViber } from '@fortawesome/free-brands-svg-icons/faViber';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { ReactElement } from 'react';
 
-import config from '../../assets/config';
+import config from '../../../assets/config';
 import css from './index.module.css';
 
 const Banner = (): ReactElement => {

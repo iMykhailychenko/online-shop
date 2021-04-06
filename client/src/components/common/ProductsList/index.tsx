@@ -1,8 +1,8 @@
 import { observer } from 'mobx-react-lite';
 import React, { ReactElement } from 'react';
 
-import ProductsLoader from '../../common/Loaders/ProductsLoader';
-import products from '../../store/products';
+import products from '../../../store/products';
+import ProductsLoader from '../Loaders/ProductsLoader';
 import ProductCard from '../ProductCard';
 
 const ProductsList = (): ReactElement => {

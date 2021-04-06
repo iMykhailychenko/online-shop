@@ -3,10 +3,10 @@ import React, { ReactElement, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import AnchorLink from 'react-scroll/modules/components/Link';
 
-import router from '../../assets/router';
-import products from '../../store/products';
+import router from '../../../assets/router';
+import products from '../../../store/products';
+import Logo from '../../common/Logo';
 import Container from '../Container';
-import Logo from '../Logo';
 import css from './index.module.css';
 
 const Header = (): ReactElement => {

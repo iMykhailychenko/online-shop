@@ -1,8 +1,8 @@
 import { observer } from 'mobx-react-lite';
 import React, { ReactElement, useEffect, useState } from 'react';
 
-import useStore from '../../hooks/store.hook';
-import IPictures from '../../store/pictures/pictures.types';
+import useStore from '../../../hooks/store.hook';
+import IPictures from '../../../store/pictures/pictures.types';
 import css from './index.module.css';
 
 const Pictures = (): ReactElement => {

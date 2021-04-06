@@ -4,7 +4,7 @@ export interface IPagination<Data> {
     data: Data;
 }
 
-export interface Product {
+export interface IProduct {
     id: number;
     banner: string;
     images?: string[];
@@ -14,4 +14,8 @@ export interface Product {
     description: string;
     rating: number;
     pictures: string[];
+}
+
+export interface ICartProduct extends IProduct {
+    total: number;
 }

@@ -3,12 +3,12 @@ import { makeAutoObservable } from 'mobx';
 
 import api from '../../assets/api';
 import config from '../../assets/config';
-import { IPagination, Product } from '../../interface';
+import { IPagination, IProduct } from '../../interface';
 import IProducts from './products.types';
 
 class Index implements IProducts {
     public loading = true;
-    public products: IPagination<Product[]> = { total: 0, page: 0, data: [] };
+    public products: IPagination<IProduct[]> = { total: 0, page: 0, data: [] };
     public element: HTMLDivElement | null = null;
 
     constructor() {
