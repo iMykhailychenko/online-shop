@@ -1,0 +1,46 @@
+.card {
+    margin-bottom: 2rem;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.inner {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.img {
+    height: 8rem;
+    min-width: 8rem;
+    max-width: 8rem;
+    margin-right: 1rem;
+}
+
+.content:hover {
+    text-decoration: underline;
+}
+
+.cart,
+.bay {
+    padding: 0.5rem 2rem;
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+}
+
+.bay {
+    color: var(--white);
+    background: var(--blue);
+}
+
+.cart {
+    margin-right: 1rem;
+    color: var(--gray-05);
+}
+
+.cart:hover {
+    background: var(--gray-02);
+}

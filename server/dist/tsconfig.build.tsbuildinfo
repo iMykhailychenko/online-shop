@@ -3162,12 +3162,12 @@
         "affectsGlobalScope": false
       },
       "../src/products/products.entity.ts": {
-        "version": "281888a0231e080d3a3519ac7c333e50d8d0f76ec2a65b4064fb09e1a3469069",
-        "signature": "7e8f9e6f64c5f0af15d8dadd848968edfa5de058584348a10fdbf0f5a8e09dd8",
+        "version": "e948a9325ab0f1648e6e2163568ac413d568246f4fab203459d8864f0998e23f",
+        "signature": "942de1ba3b446ac567c85a5773164a9d2cb8557fac754ebc553a0f4de4ca5307",
         "affectsGlobalScope": false
       },
       "../src/products/products.service.ts": {
-        "version": "21c3e1997d39d8ad73b538337e2daa024bdfed5f236f91d93cf96cb689dcb794",
+        "version": "ab5ea760818e85bf065027c6ac1f24208170c13443fa947c0cea2ce6bfc25edd",
         "signature": "ea3e0d13b1a311fa9524142d4854e898178546bdd1d3f03cb0808224838e66f1",
         "affectsGlobalScope": false
       },

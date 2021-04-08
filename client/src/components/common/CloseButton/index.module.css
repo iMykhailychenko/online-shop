@@ -10,7 +10,7 @@
 }
 
 .btn:hover {
-    box-shadow: 0 0 0 0.1rem var(--gray-04);
+    box-shadow: 0 0 0 0.3rem var(--gray-04);
 }
 
 .btn::before,

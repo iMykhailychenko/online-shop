@@ -1,7 +1,6 @@
-import { Params } from '@fortawesome/fontawesome-svg-core';
 import axios, { AxiosResponse } from 'axios';
 
-import { IProduct } from '../interface';
+import { IProduct, Params } from '../interface';
 
 axios.defaults.baseURL = '/api';
 

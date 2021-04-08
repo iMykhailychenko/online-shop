@@ -1,17 +1,25 @@
-import React, { ReactElement, useState } from 'react';
+import { observer } from 'mobx-react-lite';
+import React, { ReactElement } from 'react';
 
+import useStore from '../../../../hooks/store.hook';
+import ICart from '../../../../store/cart/cart.types';
 import Drawer from '../index';
+import ProductItem from './ProductItem';
 
 const CartDrawer = (): ReactElement => {
-    const [open, setOpen] = useState<boolean>(false);
+    const cart = useStore<ICart>(state => state.cart);
     return (
-        <Drawer width={50} onToggle={setOpen} open={open}>
+        <Drawer width={50} onToggle={cart.toggleCart} open={cart.drawer}>
             <>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium aperiam autem corporis dolores
-                eum, fuga fugiat illo modi nobis porro sed soluta ullam ut, velit! Dolores nam quam vero?
+                <h2>Products in cart:</h2>
+                <ul>
+                    {cart.products.map(item => (
+                        <ProductItem key={item.id} product={item} />
+                    ))}
+                </ul>
             </>
         </Drawer>
     );
 };
 
-export default CartDrawer;
+export default observer(CartDrawer);

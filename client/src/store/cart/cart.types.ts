@@ -1,6 +1,11 @@
-import { ICartProduct } from '../../interface';
+import { IProduct } from '../../interface';
 
 export default interface ICart {
+    drawer: boolean;
     amount: number;
-    products: ICartProduct[];
+    products: IProduct[];
+    push: (product: IProduct) => void;
+    delete: (id: number) => void;
+    toggleCart: () => void;
+    countAmount: (products: IProduct[]) => void;
 }

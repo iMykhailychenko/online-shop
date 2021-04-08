@@ -5,5 +5,6 @@ export default interface IProducts {
     products: IPagination<IProduct[]>;
     element: HTMLDivElement | null;
     setElement: (dom: HTMLDivElement) => void;
-    setProducts: () => void;
+    push: () => Promise<void>;
+    amount: (id: number, amount: number) => void;
 }

@@ -19,7 +19,7 @@ export class Product {
     price: number;
 
     @Column({ type: 'int', default: 0 })
-    amount: number;
+    available: number;
 
     @OneToMany(() => Pictures, pictures => pictures.products)
     pictures: Pictures[];

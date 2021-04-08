@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import router from '../../assets/router';
 import CartDrawer from '../common/Drawer/CartDrawer';
+import ScrollCart from '../common/ScrollCart';
 import ScrollTop from '../common/ScrollTopBtn';
 import Body from '../layout/Body';
 import Footer from '../layout/Footer';
@@ -24,6 +25,7 @@ const App = (): ReactElement => {
                         </Switch>
                     </Body>
                     <CartDrawer />
+                    <ScrollCart />
                     <ScrollTop />
                     <Footer />
                 </div>

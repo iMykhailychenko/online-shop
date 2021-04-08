@@ -1,9 +1,8 @@
-import { Params } from '@fortawesome/fontawesome-svg-core';
 import { makeAutoObservable } from 'mobx';
 
 import api from '../../assets/api';
 import config from '../../assets/config';
-import { IPagination, IProduct } from '../../interface';
+import { IPagination, IProduct, Params } from '../../interface';
 import IProducts from './products.types';
 
 class Index implements IProducts {
@@ -15,11 +14,11 @@ class Index implements IProducts {
         makeAutoObservable(this);
     }
 
-    setElement = (dom: HTMLDivElement) => {
+    setElement = (dom: HTMLDivElement): void => {
         this.element = dom;
     };
 
-    setProducts = async () => {
+    push = async (): Promise<void> => {
         this.loading = true;
         try {
             const { status, data } = await api.products.get({ page: 1, offset: config.products.offset } as Params);
@@ -32,6 +31,10 @@ class Index implements IProducts {
         }
 
         this.loading = false;
+    };
+
+    amount = (id: number, amount: number): void => {
+        this.products.data = this.products.data.map<IProduct>(item => (item.id === id ? { ...item, amount } : item));
     };
 }
 

@@ -1,8 +1,7 @@
-import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { MouseEvent, ReactElement, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
+import CloseButton from '../CloseButton';
 import css from './index.module.css';
 
 interface IProps {
@@ -54,10 +53,8 @@ const Drawer = ({ children, width = 40, open, onToggle }: IProps): ReactElement 
     return (
         <CSSTransition timeout={200} unmountOnExit in={open}>
             <Root onToggle={onToggle} open={open}>
-                <div className="inner" style={{ maxWidth: `${width}rem`, minWidth: `${width - 10}rem` }}>
-                    <button type="button" className={css.button} onClick={handleToggle}>
-                        <FontAwesomeIcon icon={faTimes} />
-                    </button>
+                <div className={css.inner} style={{ maxWidth: `${width}rem`, minWidth: `${width - 10}rem` }}>
+                    <CloseButton className={css.button} onClick={handleToggle} />
                     {children}
                 </div>
             </Root>

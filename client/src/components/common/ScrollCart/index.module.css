@@ -1,0 +1,26 @@
+.number {
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+}
+
+.btn {
+    position: fixed;
+    right: 2.5rem;
+    bottom: 9rem;
+    z-index: 10000;
+    height: 5rem;
+    width: 5rem;
+    background: var(--black);
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    transition: 0.2s ease-in-out;
+    color: var(--white);
+}
+
+@media (max-width: 900px) {
+    .btn {
+        bottom: 5rem;
+    }
+}

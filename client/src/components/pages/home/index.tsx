@@ -12,7 +12,7 @@ const Home = (): ReactElement => {
     const ref = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
-        products.setProducts();
+        products.push();
     }, []);
 
     useEffect(() => {

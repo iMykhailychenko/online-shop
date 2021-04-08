@@ -9,13 +9,14 @@ export interface IProduct {
     banner: string;
     images?: string[];
     price: number;
-    amount: number;
+    available: number;
     title: string;
     description: string;
     rating: number;
     pictures: string[];
+    amount?: number;
 }
 
-export interface ICartProduct extends IProduct {
-    total: number;
+export interface Params {
+    [key: string]: unknown;
 }
