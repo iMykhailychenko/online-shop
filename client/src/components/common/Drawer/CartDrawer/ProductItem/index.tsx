@@ -1,7 +1,8 @@
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons/faShoppingCart';
+import { faMinus } from '@fortawesome/free-solid-svg-icons/faMinus';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import clsx from 'clsx';
 import { observer } from 'mobx-react-lite';
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 
 import { moneyFormat } from '../../../../../assets/helpers';
@@ -18,18 +19,17 @@ interface IProps {
 }
 
 const ProductItem = ({ product }: IProps): ReactElement => {
-    const [value, setValue] = useState<number | string>(1);
     const cart = useStore<ICart>(state => state.cart);
     const products = useStore<IProducts>(state => state.products);
+    const amount = product.amount || 1;
 
     const toggleValue = (value: string | number): void => {
-        setValue(value);
         products.amount(product.id, +value);
+        cart.push({ ...product, amount: +value });
     };
 
     const handleDeleteFromCart = (): void => {
-        products.amount(product.id, +value);
-        cart.push({ ...product, amount: +value });
+        cart.delete(product.id);
     };
 
     return (
@@ -41,18 +41,17 @@ const ProductItem = ({ product }: IProps): ReactElement => {
                         <h3 className={css.name}>{product.title}</h3>
                     </Link>
                     <div className={css.flex}>
-                        <p>{moneyFormat(Math.round(product.price * (!+value ? 1 : +value) * 100) / 100)} $</p>
+                        <p>{moneyFormat(Math.round(product.price * (amount || 1) * 100) / 100)} $</p>
                         <p>available: {product.available}</p>
                     </div>
-                </div>
-            </div>
-
-            <div className={css.flex}>
-                <CountButtons max={product.available} value={value} onChange={toggleValue} />
-                <div className={css.action}>
-                    <button className={css.cart} type="button" onClick={handleDeleteFromCart}>
-                        <FontAwesomeIcon icon={faShoppingCart} />
-                    </button>
+                    <div className={clsx(css.flex, css.count)}>
+                        <CountButtons max={product.available} value={amount} onChange={toggleValue} />
+                        <div className={css.action}>
+                            <button className={css.cart} type="button" onClick={handleDeleteFromCart}>
+                                <FontAwesomeIcon icon={faMinus} />
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </li>

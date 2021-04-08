@@ -1,23 +1,31 @@
 .card {
-    margin-bottom: 2rem;
+    padding: 2rem 0;
+    border-bottom: 0.1rem solid var(--gray-02);
+}
+
+.card:nth-of-type(1) {
+    border-top: 0.1rem solid var(--gray-02);
 }
 
 .flex {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1rem;
+}
+
+.count {
+    margin: 1.5rem 0 0;
 }
 
 .inner {
     width: 100%;
-    margin-bottom: 1rem;
 }
 
 .img {
-    height: 8rem;
-    min-width: 8rem;
-    max-width: 8rem;
+    height: 10.5rem;
+    min-width: 10.5rem;
+    max-width: 10.5rem;
     margin-right: 1rem;
+    object-fit: cover;
 }
 
 .content:hover {

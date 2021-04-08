@@ -1,5 +1,5 @@
 export const moneyFormat = (value: string | number = 0): string => {
-    const float = String((+value * 100) / 100).split('.');
+    const float = String(Math.round(+value * 100) / 100).split('.');
     value = String(float[0])
         .split('')
         .reverse()

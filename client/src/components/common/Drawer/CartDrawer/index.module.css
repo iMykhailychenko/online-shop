@@ -1,0 +1,16 @@
+.title {
+    margin-bottom: 1rem;
+}
+
+.text {
+    width: 100%;
+}
+
+.text span {
+    font-weight: 600;
+    margin-left: 0.8rem;
+}
+
+.list {
+    margin-top: 2rem;
+}

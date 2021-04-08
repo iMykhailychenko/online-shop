@@ -7,6 +7,7 @@ class Cart implements ICart {
     public drawer = false;
     public amount = 0;
     public products: IProduct[] = [];
+    public productsId: number[] = [];
 
     constructor() {
         makeAutoObservable(this);
@@ -18,6 +19,7 @@ class Cart implements ICart {
         if (inCart) {
             if (!product.amount) {
                 this.products = this.products.filter(item => item.id !== product.id);
+                this.productsId = this.productsId.filter(item => item !== product.id);
                 this.countAmount();
                 return;
             }
@@ -32,11 +34,14 @@ class Cart implements ICart {
         }
 
         this.products.push(product);
+        this.productsId.push(product.id);
         this.countAmount();
     };
 
     delete = (id: number): void => {
         this.products = this.products.filter(item => item.id !== id);
+        this.productsId = this.productsId.filter(item => item !== id);
+        this.countAmount();
     };
 
     toggleCart = (): void => {
