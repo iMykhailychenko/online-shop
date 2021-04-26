@@ -1,0 +1,87 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 8rem 0 4rem;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .pagination .previous,
+    .pagination .next {
+        display: none;
+    }
+}
+
+.page {
+    display: block;
+    min-width: 5rem;
+    margin: 0.4rem;
+    padding: 1.3rem 2.5rem;
+    border-radius: var(--radius);
+    background: var(--gray-02);
+    color: var(--black);
+    font-size: 1.6rem;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    user-select: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .page {
+        margin: 0.2rem;
+    }
+}
+
+.active {
+    background: var(--blue);
+    color: var(--white);
+    pointer-events: none;
+}
+
+.nav {
+    display: block;
+    min-width: 6rem;
+    margin: 0.4rem;
+    padding: 1.3rem 1rem;
+    border-radius: var(--radius);
+    background: var(--gray-02);
+    font-size: 1.6rem;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.disabled {
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.more {
+    display: flex;
+    align-items: center;
+    margin: 4rem 0 1rem;
+    padding: 1.2rem 3rem;
+    background: var(--blue);
+    color: var(--white);
+    font-size: 1.6rem;
+    border-radius: 0.6rem;
+    user-select: none;
+}
+
+@media (max-width: 768px) {
+    .more {
+        min-height: 6rem;
+    }
+
+    .more span {
+        margin-left: 1rem;
+    }
+}

@@ -6,7 +6,6 @@ import css from './index.module.css';
 
 const ScrollTop = (): ReactElement => {
     const buttonRef = useRef<HTMLButtonElement | null>(null);
-
     const [top, setTop] = useState(false);
 
     useEffect(() => {

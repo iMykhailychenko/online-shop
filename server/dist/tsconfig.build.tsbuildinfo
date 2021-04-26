@@ -3166,11 +3166,6 @@
         "signature": "942de1ba3b446ac567c85a5773164a9d2cb8557fac754ebc553a0f4de4ca5307",
         "affectsGlobalScope": false
       },
-      "../src/products/products.service.ts": {
-        "version": "ab5ea760818e85bf065027c6ac1f24208170c13443fa947c0cea2ce6bfc25edd",
-        "signature": "ea3e0d13b1a311fa9524142d4854e898178546bdd1d3f03cb0808224838e66f1",
-        "affectsGlobalScope": false
-      },
       "../node_modules/class-validator/types/validation/validationerror.d.ts": {
         "version": "e69d0b59db23f59172cb087ee44a71438f809bd214d4f4105abd6090b341cbdc",
         "signature": "e69d0b59db23f59172cb087ee44a71438f809bd214d4f4105abd6090b341cbdc",
@@ -3801,9 +3796,19 @@
         "signature": "8cfb75c735e4bc1698e2ba8f77f5240126fba533b3f9909fda7b2a968ab44b38",
         "affectsGlobalScope": false
       },
+      "../src/interfaces.ts": {
+        "version": "d5297bd7e0d959193b7f92909ce077d5762b6a4774adc8e82eab388636a96b3f",
+        "signature": "d5297bd7e0d959193b7f92909ce077d5762b6a4774adc8e82eab388636a96b3f",
+        "affectsGlobalScope": false
+      },
+      "../src/products/products.service.ts": {
+        "version": "a79a2fe9707bd15616b77972d06dff00e10b733d7c2446e3eedd8e8158fc71c7",
+        "signature": "1a6bc2074765283f8788d54ee0956a4a2f3fc3fe94b55ae0a72a25116776a8ac",
+        "affectsGlobalScope": false
+      },
       "../src/products/products.controller.ts": {
-        "version": "72e2802a37d99a309c40552af3daabb43ea4042fe8a38a44e8d022f85f9cc620",
-        "signature": "1911238b75e7c06993278ba34b7214131898006bf9b5e9179f75607cee394344",
+        "version": "023ac4263ebe814f84146b09b840f27cbd2b2cbfe9cb704cae6552952b9924b2",
+        "signature": "1aea76eefeb8f4abf2427b6b85fc91ecdb29f9794ae7db8b329205f03c594b65",
         "affectsGlobalScope": false
       },
       "../src/products/products.module.ts": {
@@ -7593,7 +7598,9 @@
       ],
       "../src/products/products.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
+        "../src/interfaces.ts",
         "../src/products/dto/products.dto.ts",
+        "../src/products/products.entity.ts",
         "../src/products/products.service.ts"
       ],
       "../src/products/products.entity.ts": [
@@ -7612,6 +7619,8 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/typeorm/index.d.ts",
         "../node_modules/typeorm/index.d.ts",
+        "../src/interfaces.ts",
+        "../src/products/dto/products.dto.ts",
         "../src/products/products.entity.ts"
       ]
     },
@@ -10801,7 +10810,9 @@
         "../src/products/products.entity.ts"
       ],
       "../src/products/products.controller.ts": [
+        "../src/interfaces.ts",
         "../src/products/dto/products.dto.ts",
+        "../src/products/products.entity.ts",
         "../src/products/products.service.ts"
       ],
       "../src/products/products.entity.ts": [
@@ -10809,6 +10820,8 @@
       ],
       "../src/products/products.service.ts": [
         "../node_modules/typeorm/index.d.ts",
+        "../src/interfaces.ts",
+        "../src/products/dto/products.dto.ts",
         "../src/products/products.entity.ts"
       ]
     },
@@ -11674,6 +11687,7 @@
       "../node_modules/typescript/lib/lib.scripthost.d.ts",
       "../node_modules/typescript/lib/lib.webworker.importscripts.d.ts",
       "../src/app.module.ts",
+      "../src/interfaces.ts",
       "../src/main.ts",
       "../src/pictures/interfaces/pictures.interfaces.ts",
       "../src/pictures/pictures.controller.ts",

@@ -1,4 +1,4 @@
-export interface IPagination<Data> {
+export interface Pagination<Data> {
     total: number;
     page: number;
     data: Data;

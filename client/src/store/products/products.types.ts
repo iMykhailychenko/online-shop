@@ -1,10 +1,11 @@
-import { IPagination, IProduct } from '../../interface';
+import { IProduct, Pagination } from '../../interface';
 
 export default interface IProducts {
     loading: boolean;
-    products: IPagination<IProduct[]>;
+    products: Pagination<IProduct[]>;
     element: HTMLDivElement | null;
     setElement: (dom: HTMLDivElement) => void;
-    push: () => Promise<void>;
+    push: (page: number) => Promise<void>;
+    more: (page: number) => Promise<void>;
     amount: (id: number, amount: number) => void;
 }
