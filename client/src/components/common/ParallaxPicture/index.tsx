@@ -19,8 +19,8 @@ const ParallaxPicture = ({ src, alt }: IProps): ReactElement => {
         if (!ref.current) return;
         const height = ref.current?.offsetHeight / 2;
         const width = ref.current?.offsetWidth / 2;
-        ref.current.style.transform = `rotateX(${-(event.nativeEvent.offsetY - height) / 15}deg) rotateY(${
-            (event.nativeEvent.offsetX - width) / 15
+        ref.current.style.transform = `rotateX(${(event.nativeEvent.offsetY - height) / 20}deg) rotateY(${
+            -(event.nativeEvent.offsetX - width) / 20
         }deg)`;
     };
 

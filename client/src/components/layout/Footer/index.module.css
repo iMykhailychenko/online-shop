@@ -1,4 +1,12 @@
 footer {
     padding: 3rem 0;
-    background: var(--gray-03);
+    background: var(--gray-02);
+}
+
+.link {
+    margin-right: 3rem;
+}
+
+.link:hover {
+    text-decoration: underline;
 }

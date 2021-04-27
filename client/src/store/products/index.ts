@@ -8,6 +8,7 @@ import IProducts from './products.types';
 class Index implements IProducts {
     public loading = true;
     public products: Pagination<IProduct[]> = { total: 0, page: 0, data: [] };
+    public single: IProduct | null = null;
     public element: HTMLDivElement | null = null;
 
     constructor() {
@@ -43,6 +44,16 @@ class Index implements IProducts {
         }
 
         this.loading = false;
+    };
+
+    findById = async (id: number): Promise<void> => {
+        try {
+            const { status, data } = await api.products.single(id);
+            if (status < 200 || status >= 300) throw new Error();
+            this.single = data;
+        } catch (error) {
+            console.dir(error);
+        }
     };
 
     amount = (id: number, amount: number): void => {

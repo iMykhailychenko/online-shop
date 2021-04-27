@@ -10,10 +10,6 @@ import ProductCard from '../ProductCard';
 const ProductsList = (): ReactElement => {
     const products = useStore<IProducts>(state => state.products);
 
-    const handleClick = (page: number): void => {
-        products.push(page);
-    };
-
     return (
         <>
             <ProductsLoader loading={products.loading} isEmpty={!products.products.data.length}>
@@ -23,7 +19,7 @@ const ProductsList = (): ReactElement => {
                         : null}
                 </>
             </ProductsLoader>
-            <Pagination total={products?.products?.total || 0} onClick={handleClick} onMore={console.log} />
+            <Pagination total={products?.products?.total || 0} onClick={products.push} onMore={products.more} />
         </>
     );
 };

@@ -1,0 +1,64 @@
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 4rem;
+}
+
+.wrp {
+    position: relative;
+}
+
+.eye {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 4rem;
+}
+
+.input {
+    display: block;
+    padding: 1rem;
+    width: 100%;
+    border: 0.1rem solid var(--gray-03);
+    border-radius: var(--radius);
+}
+
+.error {
+    border: 0.1rem solid var(--red-01);
+}
+
+.label {
+    display: block;
+    margin: 1.5rem 0;
+    font-size: 1.4rem;
+}
+
+.label p {
+    margin-bottom: 0.5rem;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: var(--radius);
+    font-size: 1.4rem;
+}
+
+.cancel {
+    background: var(--gray-02);
+}
+
+.login {
+    margin-left: 1rem;
+    background: var(--green-02);
+    color: var(--white);
+}
+
+.red {
+    display: block;
+    color: var(--red-01);
+}

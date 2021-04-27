@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Get, Injectable, Param } from '@nestjs/common';
 import { Product } from './products.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -21,5 +21,9 @@ export class ProductsService {
             page: +page,
             data: result,
         };
+    }
+
+    async findById(id: number): Promise<Product> {
+        return await this.productsRepository.findOne(id, { relations: ['pictures'] });
     }
 }

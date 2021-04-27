@@ -11,7 +11,7 @@ const Banner = (): ReactElement => {
     return (
         <div className={css.wrp}>
             <div className={css.main}>
-                <h1 className={css.title}>Discover our online magaz</h1>
+                <h1 className={css.title}>Discover our t-shirts online magaz</h1>
                 <p className={css.text}>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, at aut delectus eos excepturi
                     explicabo facilis iure iusto laboriosam laudantium nisi perspiciatis rerum, sequi sint, ullam? A

@@ -3802,13 +3802,13 @@
         "affectsGlobalScope": false
       },
       "../src/products/products.service.ts": {
-        "version": "a79a2fe9707bd15616b77972d06dff00e10b733d7c2446e3eedd8e8158fc71c7",
-        "signature": "1a6bc2074765283f8788d54ee0956a4a2f3fc3fe94b55ae0a72a25116776a8ac",
+        "version": "8b73de77c44befded8b3fbd26cd9a101c6daaddac092081d8c670d16ee6a8e82",
+        "signature": "5200e3bd662ae8847c7d1dc2da9e4d907291c202d095cdfdbfcf4ab5f6d35060",
         "affectsGlobalScope": false
       },
       "../src/products/products.controller.ts": {
-        "version": "023ac4263ebe814f84146b09b840f27cbd2b2cbfe9cb704cae6552952b9924b2",
-        "signature": "1aea76eefeb8f4abf2427b6b85fc91ecdb29f9794ae7db8b329205f03c594b65",
+        "version": "05643ccf04309917ecda327dbda896e20891f9396bd31d79853c22c5cb0eb80f",
+        "signature": "8f1e60eb300d0a85adecd635b8f9366a7dcc84bfdbbd530d00a13f13382a45ce",
         "affectsGlobalScope": false
       },
       "../src/products/products.module.ts": {
