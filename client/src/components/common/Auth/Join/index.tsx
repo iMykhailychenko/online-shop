@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
 import React, { ChangeEvent, FormEvent, ReactElement, useState } from 'react';
 
+import Input from '../../Input';
 import { modal } from '../../Modal';
 import css from '../index.module.css';
 
@@ -73,22 +74,23 @@ const Join = (): ReactElement => {
         <form action="#" method="post" onSubmit={submit}>
             <h2>Join form</h2>
 
-            <label className={css.label}>
+            <div className={css.label}>
                 <p>First name</p>
-                <input
+                <Input
+                    error={error.firstName}
                     value={input.firstName}
-                    onChange={change}
                     className={clsx(css.input, error.firstName && css.error)}
-                    type="text"
+                    onChange={change}
                     name="firstName"
                     placeholder="..."
+                    type="text"
                 />
-                {error.firstName && <small className={css.red}>{error.firstName}</small>}
-            </label>
+            </div>
 
-            <label className={css.label}>
+            <div className={css.label}>
                 <p>Last name</p>
-                <input
+                <Input
+                    error={error.lastName}
                     value={input.lastName}
                     onChange={change}
                     className={clsx(css.input, error.lastName && css.error)}
@@ -96,12 +98,12 @@ const Join = (): ReactElement => {
                     name="lastName"
                     placeholder="..."
                 />
-                {error.lastName && <small className={css.red}>{error.lastName}</small>}
-            </label>
+            </div>
 
-            <label className={css.label}>
+            <div className={css.label}>
                 <p>Email</p>
-                <input
+                <Input
+                    error={error.email}
                     value={input.email}
                     onChange={change}
                     className={clsx(css.input, error.email && css.error)}
@@ -109,13 +111,13 @@ const Join = (): ReactElement => {
                     name="email"
                     placeholder="example@email.com"
                 />
-                {error.email && <small className={css.red}>{error.email}</small>}
-            </label>
+            </div>
 
-            <label className={css.label}>
+            <div className={css.label}>
                 <p>Password</p>
                 <div className={css.wrp}>
-                    <input
+                    <Input
+                        error={error.password}
                         value={input.password}
                         onChange={change}
                         className={clsx(css.input, error.password && css.error)}
@@ -127,8 +129,7 @@ const Join = (): ReactElement => {
                         {type === 'password' ? <FontAwesomeIcon icon={faEye} /> : <FontAwesomeIcon icon={faEyeSlash} />}
                     </button>
                 </div>
-                {error.password && <small className={css.red}>{error.password}</small>}
-            </label>
+            </div>
 
             <div className={css.flex}>
                 <button type="button" onClick={modal.close} className={clsx(css.btn, css.cancel)}>

@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
 import React, { ChangeEvent, FormEvent, ReactElement, useState } from 'react';
 
+import Input from '../../Input';
 import { modal } from '../../Modal';
 import css from '../index.module.css';
 
@@ -57,9 +58,10 @@ const Login = (): ReactElement => {
         <form action="#" method="post" onSubmit={submit}>
             <h2>Login form</h2>
 
-            <label className={css.label}>
+            <div className={css.label}>
                 <p>Email</p>
-                <input
+                <Input
+                    error={error.email}
                     value={input.email}
                     onChange={change}
                     className={clsx(css.input, error.email && css.error)}
@@ -67,13 +69,13 @@ const Login = (): ReactElement => {
                     name="email"
                     placeholder="example@email.com"
                 />
-                {error.email && <small className={css.red}>{error.email}</small>}
-            </label>
+            </div>
 
-            <label className={css.label}>
+            <div className={css.label}>
                 <p>Password</p>
                 <div className={css.wrp}>
-                    <input
+                    <Input
+                        error={error.password}
                         value={input.password}
                         onChange={change}
                         className={clsx(css.input, error.password && css.error)}
@@ -85,8 +87,7 @@ const Login = (): ReactElement => {
                         {type === 'password' ? <FontAwesomeIcon icon={faEye} /> : <FontAwesomeIcon icon={faEyeSlash} />}
                     </button>
                 </div>
-                {error.password && <small className={css.red}>{error.password}</small>}
-            </label>
+            </div>
 
             <div className={css.flex}>
                 <button type="button" onClick={modal.close} className={clsx(css.btn, css.cancel)}>

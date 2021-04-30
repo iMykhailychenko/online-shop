@@ -15,9 +15,15 @@ const router = {
         component: lazy(() => import('../components/pages/profile' /* webpackChunkName: "profile-page" */)),
     },
     product: {
-        path: '/products/:product',
-        dynamic: (value: string | number): string => `/products/${value}`,
-        component: lazy(() => import('../components/pages/product' /* webpackChunkName: "product-page" */)),
+        single: {
+            path: '/products/:product',
+            dynamic: (value: string | number): string => `/products/${value}`,
+            component: lazy(() => import('../components/pages/product' /* webpackChunkName: "product-page" */)),
+        },
+        create: {
+            path: '/products/create',
+            component: lazy(() => import('../components/pages/product/create' /* webpackChunkName: "product-page" */)),
+        },
     },
 };
 

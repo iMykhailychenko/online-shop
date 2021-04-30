@@ -1,0 +1,16 @@
+.input {
+    display: block;
+    padding: 1rem;
+    width: 100%;
+    border: 0.1rem solid var(--gray-03);
+    border-radius: var(--radius);
+}
+
+.error {
+    border: 0.1rem solid var(--red-01);
+}
+
+.red {
+    display: block;
+    color: var(--red-01);
+}

@@ -37,7 +37,7 @@ const ProductItem = ({ product }: IProps): ReactElement => {
             <div className={css.flex}>
                 <img className={css.img} src={product.banner} alt="" />
                 <div className={css.inner}>
-                    <Link className={css.content} to={router.product.dynamic(product.id)}>
+                    <Link className={css.content} to={router.product.single.dynamic(product.id)}>
                         <h3 className={css.name}>{product.title}</h3>
                     </Link>
                     <div className={css.flex}>

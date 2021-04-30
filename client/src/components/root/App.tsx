@@ -20,7 +20,12 @@ const App = (): ReactElement => {
                         <Switch>
                             <Route exact path={router.home.path} component={router.home.component} />
                             <Route path={router.auth.path} component={router.auth.component} />
-                            <Route path={router.product.path} component={router.product.component} />
+                            <Route
+                                exact
+                                path={router.product.create.path}
+                                component={router.product.create.component}
+                            />
+                            <Route path={router.product.single.path} component={router.product.single.component} />
                             <Route path={router.profile.path} component={router.profile.component} />
                         </Switch>
                     </Body>

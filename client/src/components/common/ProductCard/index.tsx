@@ -44,7 +44,7 @@ const ProductCard = ({ product }: IProps): ReactElement => {
         <div className={css.card}>
             <ParallaxPicture src={product.banner} alt={product.title} images={product.images} />
 
-            <Link className={css.content} to={router.product.dynamic(product.id)}>
+            <Link className={css.content} to={router.product.single.dynamic(product.id)}>
                 <h3 className={css.name}>{product.title}</h3>
                 <p className={css.description}>
                     {product.description.length > MAX_CONTENT
