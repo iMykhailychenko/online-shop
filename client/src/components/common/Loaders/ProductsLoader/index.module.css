@@ -31,3 +31,11 @@
 .short {
     width: 50%;
 }
+
+.empty {
+    padding: 15rem 5rem;
+    margin-bottom: 15rem;
+    background: var(--gray-02);
+    border-radius: var(--radius);
+    text-align: center;
+}

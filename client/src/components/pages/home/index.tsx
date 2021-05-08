@@ -17,7 +17,7 @@ const Home = (): ReactElement => {
     const ref = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
-        products.push(page);
+        products.push(page).catch(error => console.log(error));
     }, []);
 
     useEffect(() => {

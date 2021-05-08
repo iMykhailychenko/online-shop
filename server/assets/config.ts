@@ -16,6 +16,7 @@ export default () => ({
         database: process.env.DB_NAME,
         ssl: Boolean(process.env.DB_SSL),
         synchronize: true,
+        autoLoadEntities: true,
         dialectOptions: {
             ssl: { require: Boolean(process.env.DB_SSL) },
         },

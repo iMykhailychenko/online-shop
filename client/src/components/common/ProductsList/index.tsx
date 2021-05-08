@@ -19,7 +19,9 @@ const ProductsList = (): ReactElement => {
                         : null}
                 </>
             </ProductsLoader>
-            <Pagination total={products?.products?.total || 0} onClick={products.push} onMore={products.more} />
+            {!products?.products?.total ? (
+                <Pagination total={products?.products?.total || 0} onClick={products.push} onMore={products.more} />
+            ) : null}
         </>
     );
 };

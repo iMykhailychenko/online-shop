@@ -25,7 +25,7 @@ const ProductsLoader = ({ loading, isEmpty, children }: IProps): ReactElement =>
                     ))}
                 </div>
             ) : isEmpty ? (
-                <p>Nothing to show</p>
+                <p className={css.empty}>Nothing to show</p>
             ) : (
                 <div className={css.grid}>{children}</div>
             )}
