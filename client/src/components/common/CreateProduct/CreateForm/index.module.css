@@ -38,6 +38,17 @@
 .add {
     width: 6rem;
     height: 3rem;
+    background: var(--green-01);
+}
+
+.red {
+    display: block;
+    color: var(--red-01);
+}
+
+.submit {
+    height: 3.5rem;
+    padding: 0 2rem;
     background: var(--green-02);
     color: var(--white);
 }

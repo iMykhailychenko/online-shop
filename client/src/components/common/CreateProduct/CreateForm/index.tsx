@@ -1,10 +1,11 @@
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { ChangeEvent, ReactElement, useState } from 'react';
+import React, { ChangeEvent, FormEvent, ReactElement, useState } from 'react';
 
 import { IProduct, ISizes } from '../../../../interface';
 import Input from '../../Input/input';
 import Textarea from '../../Input/textarea';
+import validation, { IError } from './CreateForm.validation';
 import css from './index.module.css';
 import SizeFields from './Size';
 
@@ -20,9 +21,11 @@ const INIT: Omit<IProduct, 'id'> = {
 
 const CreateForm = (): ReactElement => {
     const [value, setValue] = useState<Omit<IProduct, 'id'>>(INIT);
+    const [error, setError] = useState<IError>({});
 
     const change = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
         setValue(val => ({ ...val, [event.target.name]: event.target.value }));
+        setError({});
     };
 
     const validatePrice = (): void => {
@@ -32,6 +35,7 @@ const CreateForm = (): ReactElement => {
 
     const changeSize = (sizes: ISizes, inx: number): void => {
         setValue({ ...value, sizes: value.sizes.map((item, index) => (index === inx ? sizes : item)) });
+        setError({});
     };
     const validateSize = (inx: number): void => {
         if (!value.sizes[inx].amount || !+value.sizes[inx].amount)
@@ -49,24 +53,44 @@ const CreateForm = (): ReactElement => {
     };
 
     const deleteSize = (inx: number): void => {
-        if (value.sizes.length < 1) return;
+        if (value.sizes.length < 2) return;
         setValue(val => ({ ...val, sizes: val.sizes.filter((_, index) => index !== inx) }));
+        setError({});
     };
     const addSize = (): void => {
         if (value.sizes.length > 10) return;
         setValue({ ...value, sizes: [...value.sizes, { size: '', amount: 0 }] });
     };
 
+    const handleSubmit = (event: FormEvent): void => {
+        event.preventDefault();
+        if (validation(value, setError)) return;
+        console.log(value);
+    };
+
     return (
-        <form className={css.form} action="#" method="post">
+        <form className={css.form} action="#" method="post" onSubmit={handleSubmit}>
             <div className={css.wrp}>
                 <h4>Product title</h4>
-                <Input type="text" name="title" placeholder="title" value={value.title} onChange={change} />
+                <Input
+                    type="text"
+                    name="title"
+                    placeholder="title"
+                    value={value.title}
+                    onChange={change}
+                    error={error.title}
+                />
             </div>
 
             <div className={css.wrp}>
                 <h4>Product description</h4>
-                <Textarea name="description" placeholder="description" value={value.description} onChange={change} />
+                <Textarea
+                    name="description"
+                    placeholder="description"
+                    value={value.description}
+                    onChange={change}
+                    error={error.description}
+                />
             </div>
 
             <div className={css.wrp}>
@@ -78,10 +102,12 @@ const CreateForm = (): ReactElement => {
                     value={value.price}
                     onChange={change}
                     onBlur={validatePrice}
+                    error={error.price}
                 />
             </div>
 
             <h4>Product sizes (min 1, max 10)</h4>
+            {error.sizes && <small className={css.red}>{error.sizes}</small>}
             <div className={css.wrp}>
                 {value.sizes.length
                     ? value.sizes.map<ReactElement>((item, index) => (
@@ -101,6 +127,10 @@ const CreateForm = (): ReactElement => {
                     </button>
                 </div>
             </div>
+
+            <button type="submit" className={css.submit}>
+                submit
+            </button>
         </form>
     );
 };

@@ -48,7 +48,8 @@
 }
 
 .btn {
-    padding: 1rem 2rem;
+    height: 3.5rem;
+    padding: 0 2rem;
     color: var(--white);
     background: var(--green-02);
     border-radius: var(--radius);
