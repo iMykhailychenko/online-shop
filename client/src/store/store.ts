@@ -1,14 +1,16 @@
-import cart from './cart';
-import pictures from './pictures';
-import products from './products';
+import Cart from './cart';
+import Pictures from './pictures';
+import Products from './products';
 import IStore from './store.types';
-import uploads from './uploads';
+import Uploads from './uploads';
 
 class Store implements IStore {
-    public cart = cart;
-    public products = products;
-    public pictures = pictures;
-    public uploads = uploads;
+    constructor(
+        public readonly cart: Cart,
+        public readonly products: Products,
+        public readonly pictures: Pictures,
+        public readonly uploads: Uploads,
+    ) {}
 }
 
-export default new Store();
+export default new Store(new Cart(), new Products(), new Pictures(), new Uploads());

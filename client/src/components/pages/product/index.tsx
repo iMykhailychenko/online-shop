@@ -12,7 +12,7 @@ const Product = (): ReactElement => {
     const products = useStore<IProducts>(state => state.products);
 
     useEffect(() => {
-        if (productId) products.findById(productId);
+        if (productId) products.findById(productId).catch(error => console.dir(error));
     }, [productId]);
 
     return <pre>{JSON.stringify(products.single, null, 4)}</pre>;

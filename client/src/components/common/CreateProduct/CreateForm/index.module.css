@@ -2,3 +2,42 @@
     display: block;
     width: 50%;
 }
+
+.wrp {
+    margin-bottom: 4rem;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0 0;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.flex div {
+    width: calc((100% - 6rem) / 2);
+}
+
+.delete {
+    width: 4rem;
+    height: 3rem;
+    background: var(--gray-02);
+}
+
+.delete:hover {
+    color: var(--red-01);
+}
+
+.add {
+    width: 6rem;
+    height: 3rem;
+    background: var(--green-02);
+    color: var(--white);
+}

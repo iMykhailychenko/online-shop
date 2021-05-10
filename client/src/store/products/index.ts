@@ -5,7 +5,7 @@ import config from '../../assets/config';
 import { IProduct, Pagination, Params } from '../../interface';
 import IProducts from './products.types';
 
-class Index implements IProducts {
+export default class Products implements IProducts {
     public loading = true;
     public products: Pagination<IProduct[]> = { total: 0, page: 0, data: [] };
     public single: IProduct | null = null;
@@ -60,5 +60,3 @@ class Index implements IProducts {
         this.products.data = this.products.data.map<IProduct>(item => (item.id === id ? { ...item, amount } : item));
     };
 }
-
-export default new Index();

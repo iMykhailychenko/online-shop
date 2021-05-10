@@ -6,6 +6,10 @@
     border-radius: var(--radius);
 }
 
+.textarea {
+    min-height: 8rem;
+}
+
 .error {
     border: 0.1rem solid var(--red-01);
 }

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
 import React, { ChangeEvent, FormEvent, ReactElement, useState } from 'react';
 
-import Input from '../../Input';
+import Input from '../../Input/input';
 import { modal } from '../../Modal';
 import css from '../index.module.css';
 

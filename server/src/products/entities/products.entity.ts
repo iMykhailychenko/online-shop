@@ -1,4 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import { Sizes } from './sizes.entity';
 import { Pictures } from './pictures.entity';
 
 @Entity({ name: 'products_products' })
@@ -18,9 +19,9 @@ export class Product {
     @Column({ type: 'decimal', default: 0 })
     price: number;
 
-    @Column({ type: 'int', default: 0 })
-    available: number;
+    @OneToMany(() => Sizes, sizes => ({ size: sizes.size, amount: sizes.amount }))
+    amount: Sizes[];
 
-    @OneToMany(() => Pictures, pictures => pictures.products)
+    @OneToMany(() => Pictures, pictures => pictures.product)
     pictures: Pictures[];
 }

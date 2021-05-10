@@ -2,7 +2,7 @@ import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
 import { ProductsService } from './products.service';
 import { PaginationDto } from './dto/products.dto';
 import { Pagination } from '../interfaces';
-import { Product } from './products.entity';
+import { Product } from './entities/products.entity';
 
 @Controller('products')
 export class ProductsController {

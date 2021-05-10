@@ -3,7 +3,7 @@ import { makeAutoObservable } from 'mobx';
 import api from '../../assets/api';
 import IPictures from './pictures.types';
 
-class Index implements IPictures {
+export default class Pictures implements IPictures {
     public index = 0;
     public src: string | null = null;
 
@@ -22,5 +22,3 @@ class Index implements IPictures {
         }
     };
 }
-
-export default new Index();

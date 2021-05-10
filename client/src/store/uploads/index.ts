@@ -2,7 +2,7 @@ import { makeAutoObservable } from 'mobx';
 
 import { IUploads } from './uploads.types';
 
-class Uploads implements IUploads {
+export default class Uploads implements IUploads {
     public files: File[] = [];
     constructor() {
         makeAutoObservable(this);
@@ -20,5 +20,3 @@ class Uploads implements IUploads {
         alert('submit');
     };
 }
-
-export default new Uploads();

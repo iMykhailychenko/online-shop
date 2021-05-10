@@ -25,6 +25,10 @@ const ProductCard = ({ product }: IProps): ReactElement => {
     const cart = useStore<ICart>(state => state.cart);
     const products = useStore<IProducts>(state => state.products);
     const amount = product.amount || 1;
+    const available = product.sizes.reduce((acc, item) => {
+        acc += item.amount;
+        return acc;
+    }, 0);
 
     const toggleValue = (value: string | number): void => {
         products.amount(product.id, +value);
@@ -42,7 +46,7 @@ const ProductCard = ({ product }: IProps): ReactElement => {
 
     return (
         <div className={css.card}>
-            <ParallaxPicture src={product.banner} alt={product.title} images={product.images} />
+            <ParallaxPicture src={product.banner} alt={product.title} images={product.pictures} />
 
             <Link className={css.content} to={router.product.single.dynamic(product.id)}>
                 <h3 className={css.name}>{product.title}</h3>
@@ -55,11 +59,11 @@ const ProductCard = ({ product }: IProps): ReactElement => {
 
             <div className={css.flex}>
                 <p>{moneyFormat(Math.round(product.price * (amount || 1) * 100) / 100)} $</p>
-                <p>available: {product.available}</p>
+                <p>available: {available}</p>
             </div>
 
             <div className={css.flex}>
-                <CountButtons max={product.available} value={amount} onChange={toggleValue} />
+                <CountButtons max={available} value={amount} onChange={toggleValue} />
 
                 <div className={css.action}>
                     {cart.productsId.includes(product.id) ? (

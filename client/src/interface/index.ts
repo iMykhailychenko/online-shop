@@ -4,16 +4,21 @@ export interface Pagination<Data> {
     data: Data;
 }
 
+export interface ISizes {
+    size: string;
+    amount: number;
+}
+
 export interface IProduct {
     id: number;
     banner: string;
-    images?: string[];
     price: number;
-    available: number;
     title: string;
     description: string;
     rating: number;
     pictures: string[];
+    sizes: ISizes[];
+    // local
     amount?: number;
 }
 

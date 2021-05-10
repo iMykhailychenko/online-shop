@@ -12,11 +12,7 @@ interface IProps {
 
 const CountButtons = ({ max, className, onChange, value }: IProps): ReactElement => {
     const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
-        if (event.target.value === '') {
-            onChange('');
-            return;
-        }
-
+        if (event.target.value === '') return onChange('');
         if (!+event.target.value) return;
         onChange(+event.target.value);
     };

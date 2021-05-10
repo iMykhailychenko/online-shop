@@ -3,7 +3,7 @@ import { makeAutoObservable } from 'mobx';
 import { IProduct } from '../../interface';
 import ICart from './cart.types';
 
-class Cart implements ICart {
+export default class Cart implements ICart {
     public drawer = false;
     public amount = 0;
     public products: IProduct[] = [];
@@ -55,5 +55,3 @@ class Cart implements ICart {
         }, 0);
     };
 }
-
-export default new Cart();

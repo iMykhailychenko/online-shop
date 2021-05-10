@@ -20,7 +20,6 @@ const Root = ({ children, open, onToggle }: IProps) => {
             event.preventDefault();
             if (event.key === 'Escape') onToggle(false);
         };
-
         // style
         document.body.style.top = `-${window.scrollY}px`;
         document.body.style.position = 'fixed';
