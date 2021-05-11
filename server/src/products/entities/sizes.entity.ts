@@ -9,9 +9,9 @@ export class Sizes {
     @Column({ type: 'varchar', length: 200 })
     size: string;
 
-    @Column({ type: 'varchar', length: 300, default: null })
+    @Column({ type: 'int', default: 0 })
     amount: string;
 
-    @ManyToOne(() => Product, product => product.id)
+    @ManyToOne(() => Product, product => product.sizes)
     product: Product;
 }

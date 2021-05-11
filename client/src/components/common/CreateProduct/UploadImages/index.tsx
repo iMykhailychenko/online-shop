@@ -50,7 +50,9 @@ const UploadImages = (): ReactElement => {
                         <ImageItem key={file.name} file={file} uploads={uploads} />
                     ))}
                 </div>
-            ) : null}
+            ) : (
+                <p className={css.empty}>No photos</p>
+            )}
 
             <form className={css.form} action="#" method="post">
                 <label className={css.label}>

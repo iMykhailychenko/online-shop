@@ -59,4 +59,13 @@ export default class Products implements IProducts {
     amount = (id: number, amount: number): void => {
         this.products.data = this.products.data.map<IProduct>(item => (item.id === id ? { ...item, amount } : item));
     };
+
+    create = async (product: Omit<IProduct, 'id'>): Promise<void> => {
+        try {
+            const { status } = await api.products.create(product);
+            if (status < 200 || status >= 300) throw new Error();
+        } catch (error) {
+            console.dir(error);
+        }
+    };
 }

@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
 import { ProductsService } from './products.service';
-import { PaginationDto } from './dto/products.dto';
+import { PaginationDto, ProductDto } from './dto/products.dto';
 import { Pagination } from '../interfaces';
 import { Product } from './entities/products.entity';
 
@@ -19,7 +19,7 @@ export class ProductsController {
     }
 
     @Post()
-    async createProduct(@Body() product: Product) {
+    async createProduct(@Body() product: ProductDto) {
         return await this.productsService.createProduct(product);
     }
 }

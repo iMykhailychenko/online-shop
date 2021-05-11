@@ -11,4 +11,5 @@ export default interface IProducts {
     more: (page: number) => Promise<void>;
     findById: (id: number) => Promise<void>;
     amount: (id: number, amount: number) => void;
+    create: (product: Omit<IProduct, 'id'>) => Promise<void>;
 }

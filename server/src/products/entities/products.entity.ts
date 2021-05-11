@@ -16,11 +16,14 @@ export class Product {
     @Column({ type: 'varchar', length: 300, default: null })
     banner: string;
 
+    @Column({ type: 'int', default: 0 })
+    rating: string;
+
     @Column({ type: 'decimal', default: 0 })
     price: number;
 
-    @OneToMany(() => Sizes, sizes => ({ size: sizes.size, amount: sizes.amount }))
-    amount: Sizes[];
+    @OneToMany(() => Sizes, sizes => sizes.product)
+    sizes: Sizes[];
 
     @OneToMany(() => Pictures, pictures => pictures.product)
     pictures: Pictures[];

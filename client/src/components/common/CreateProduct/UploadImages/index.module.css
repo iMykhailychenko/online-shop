@@ -11,7 +11,7 @@
 .wrp {
     position: relative;
     height: 15rem;
-    width: 32%;
+    width: 31%;
     margin-right: 1%;
     margin-bottom: 2rem;
 }
@@ -53,4 +53,12 @@
     color: var(--white);
     background: var(--green-02);
     border-radius: var(--radius);
+}
+
+.empty {
+    margin: 0 4rem 2rem 0;
+    padding: 8rem 2rem;
+    background: var(--gray-02);
+    border-radius: var(--radius);
+    text-align: center;
 }

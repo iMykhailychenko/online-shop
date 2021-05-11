@@ -25,6 +25,11 @@
     width: calc((100% - 6rem) / 2);
 }
 
+.flex:nth-of-type(1) .delete {
+    opacity: 0.2;
+    pointer-events: none;
+}
+
 .delete {
     width: 4rem;
     height: 3rem;

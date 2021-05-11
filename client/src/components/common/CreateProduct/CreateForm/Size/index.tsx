@@ -28,17 +28,11 @@ const SizeFields = ({ index, value, onChange, onBlur, onDelete }: IProps): React
 
     return (
         <div className={css.flex}>
-            <Input
-                type="text"
-                name="size"
-                placeholder="Small/S Medium/M Large/L etc."
-                value={value.size || ''}
-                onChange={change}
-            />
+            <Input type="text" name="size" placeholder="S, M, L etc." value={value.size || ''} onChange={change} />
             <Input
                 type="text"
                 name="amount"
-                placeholder="amount"
+                placeholder="Amount"
                 value={value.amount || ''}
                 onChange={change}
                 onBlur={blur}

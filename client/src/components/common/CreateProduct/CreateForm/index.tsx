@@ -1,8 +1,12 @@
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { observer } from 'mobx-react-lite';
 import React, { ChangeEvent, FormEvent, ReactElement, useState } from 'react';
 
+import useStore from '../../../../hooks/store.hook';
 import { IProduct, ISizes } from '../../../../interface';
+import IProducts from '../../../../store/products/products.types';
+import { IUploads } from '../../../../store/uploads/uploads.types';
 import Input from '../../Input/input';
 import Textarea from '../../Input/textarea';
 import validation, { IError } from './CreateForm.validation';
@@ -20,6 +24,9 @@ const INIT: Omit<IProduct, 'id'> = {
 };
 
 const CreateForm = (): ReactElement => {
+    const upload = useStore<IUploads>(state => state.uploads);
+    const products = useStore<IProducts>(state => state.products);
+
     const [value, setValue] = useState<Omit<IProduct, 'id'>>(INIT);
     const [error, setError] = useState<IError>({});
 
@@ -62,10 +69,17 @@ const CreateForm = (): ReactElement => {
         setValue({ ...value, sizes: [...value.sizes, { size: '', amount: 0 }] });
     };
 
-    const handleSubmit = (event: FormEvent): void => {
+    const handleSubmit = async (event: FormEvent): Promise<void> => {
         event.preventDefault();
         if (validation(value, setError)) return;
-        console.log(value);
+
+        try {
+            const pictures = await upload.submit();
+            if (!pictures) return;
+            await products.create({ ...value, banner: pictures[0], pictures });
+        } catch (error) {
+            console.dir(error);
+        }
     };
 
     return (
@@ -75,7 +89,7 @@ const CreateForm = (): ReactElement => {
                 <Input
                     type="text"
                     name="title"
-                    placeholder="title"
+                    placeholder="Title"
                     value={value.title}
                     onChange={change}
                     error={error.title}
@@ -86,7 +100,7 @@ const CreateForm = (): ReactElement => {
                 <h4>Product description</h4>
                 <Textarea
                     name="description"
-                    placeholder="description"
+                    placeholder="Description"
                     value={value.description}
                     onChange={change}
                     error={error.description}
@@ -98,8 +112,8 @@ const CreateForm = (): ReactElement => {
                 <Input
                     type="text"
                     name="price"
-                    placeholder="price"
-                    value={value.price}
+                    placeholder="Price"
+                    value={value.price || ''}
                     onChange={change}
                     onBlur={validatePrice}
                     error={error.price}
@@ -135,4 +149,4 @@ const CreateForm = (): ReactElement => {
     );
 };
 
-export default CreateForm;
+export default observer(CreateForm);

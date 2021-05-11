@@ -11,12 +11,16 @@ import config from '../assets/config';
 import { Product } from './products/entities/products.entity';
 import { Pictures } from './products/entities/pictures.entity';
 import { Sizes } from './products/entities/sizes.entity';
+import { UploadsController } from './uploads/uploads.controller';
 
 @Module({
     imports: [
         ConfigModule.forRoot({ isGlobal: true }),
         ServeStaticModule.forRoot({
             rootPath: join(__dirname, '..', '..', 'client'),
+        }),
+        ServeStaticModule.forRoot({
+            rootPath: join(__dirname, '..', '..', 'uploads'),
         }),
         TypeOrmModule.forRoot({
             type: 'postgres',
@@ -26,7 +30,7 @@ import { Sizes } from './products/entities/sizes.entity';
         PicturesModule,
         ProductsModule,
     ],
-    controllers: [],
+    controllers: [UploadsController],
     providers: [],
 })
 export class AppModule {
