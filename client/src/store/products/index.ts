@@ -2,6 +2,7 @@ import { makeAutoObservable } from 'mobx';
 
 import api from '../../assets/api';
 import config from '../../assets/config';
+import notifications from '../../components/common/Notifications';
 import { IProduct, Pagination, Params } from '../../interface';
 import IProducts from './products.types';
 
@@ -26,7 +27,7 @@ export default class Products implements IProducts {
             if (status < 200 || status >= 300) throw new Error();
             this.products = data;
         } catch (error) {
-            console.dir(error);
+            notifications.error();
         }
 
         this.loading = false;
@@ -40,7 +41,7 @@ export default class Products implements IProducts {
             this.products.total = data.total;
             this.products.page = data.page;
         } catch (error) {
-            console.dir(error);
+            notifications.error();
         }
 
         this.loading = false;
@@ -52,7 +53,7 @@ export default class Products implements IProducts {
             if (status < 200 || status >= 300) throw new Error();
             this.single = data;
         } catch (error) {
-            console.dir(error);
+            notifications.error();
         }
     };
 
@@ -60,12 +61,13 @@ export default class Products implements IProducts {
         this.products.data = this.products.data.map<IProduct>(item => (item.id === id ? { ...item, amount } : item));
     };
 
-    create = async (product: Omit<IProduct, 'id'>): Promise<void> => {
+    create = async (product: Omit<IProduct, 'id'>): Promise<void | null> => {
         try {
             const { status } = await api.products.create(product);
             if (status < 200 || status >= 300) throw new Error();
         } catch (error) {
-            console.dir(error);
+            notifications.error();
+            return null;
         }
     };
 }

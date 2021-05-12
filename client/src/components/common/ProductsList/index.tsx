@@ -20,7 +20,7 @@ const ProductsList = (): ReactElement => {
                 </>
             </ProductsLoader>
 
-            {!products?.products?.total ? (
+            {!products?.products?.total && products?.products?.total > 1 ? (
                 <Pagination total={products?.products?.total || 0} onClick={products.push} onMore={products.more} />
             ) : null}
         </>

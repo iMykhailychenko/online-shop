@@ -52,7 +52,7 @@ const ParallaxPicture = ({ src, alt }: IProps): ReactElement => {
                     <button className={css.btn} type="button">
                         <FontAwesomeIcon icon={faExpandArrowsAlt} />
                     </button>
-                    <img className={css.img} src={src} alt={alt || ''} />
+                    <img className={css.img} src={src || '/no_photo.svg'} alt={alt || ''} />
                 </div>
             </div>
         </div>

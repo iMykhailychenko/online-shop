@@ -1,6 +1,7 @@
 import { makeAutoObservable } from 'mobx';
 
 import api from '../../assets/api';
+import notifications from '../../components/common/Notifications';
 import IPictures from './pictures.types';
 
 export default class Pictures implements IPictures {
@@ -18,7 +19,7 @@ export default class Pictures implements IPictures {
             this.src = data;
             this.index += 1;
         } catch (error) {
-            console.dir(error);
+            notifications.error();
         }
     };
 }

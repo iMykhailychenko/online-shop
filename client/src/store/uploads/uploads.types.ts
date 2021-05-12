@@ -3,4 +3,5 @@ export interface IUploads {
     push: (file: File) => void;
     delete: (name: string) => void;
     submit: () => Promise<string[] | null>;
+    reset: () => void;
 }

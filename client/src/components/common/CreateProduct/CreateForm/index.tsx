@@ -9,6 +9,7 @@ import IProducts from '../../../../store/products/products.types';
 import { IUploads } from '../../../../store/uploads/uploads.types';
 import Input from '../../Input/input';
 import Textarea from '../../Input/textarea';
+import notifications from '../../Notifications';
 import validation, { IError } from './CreateForm.validation';
 import css from './index.module.css';
 import SizeFields from './Size';
@@ -75,10 +76,17 @@ const CreateForm = (): ReactElement => {
 
         try {
             const pictures = await upload.submit();
-            if (!pictures) return;
-            await products.create({ ...value, banner: pictures[0], pictures });
+            if (!pictures) throw new Error();
+
+            const product = await products.create({ ...value, banner: pictures[0], pictures });
+            if (!product) throw new Error();
+
+            // on success
+            upload.reset();
+            setValue(INIT);
+            notifications.success(undefined, 'Your offer was successfully created');
         } catch (error) {
-            console.dir(error);
+            notifications.error();
         }
     };
 

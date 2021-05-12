@@ -7,10 +7,10 @@ export class Product {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column({ type: 'varchar', length: 200 })
+    @Column({ type: 'varchar', length: 200, default: '' })
     title: string;
 
-    @Column({ type: 'varchar', length: 500 })
+    @Column({ type: 'varchar', default: '' })
     description: string;
 
     @Column({ type: 'varchar', length: 300, default: null })

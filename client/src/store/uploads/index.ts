@@ -1,6 +1,7 @@
 import { makeAutoObservable } from 'mobx';
 
 import api from '../../assets/api';
+import notifications from '../../components/common/Notifications';
 import { IUploads } from './uploads.types';
 
 export default class Uploads implements IUploads {
@@ -18,6 +19,7 @@ export default class Uploads implements IUploads {
     };
 
     submit = async (): Promise<string[] | null> => {
+        if (!this.files.length) return ['/no_photo.svg'];
         try {
             const form = new FormData();
             this.files.forEach(file => {
@@ -27,8 +29,12 @@ export default class Uploads implements IUploads {
             if (status < 200 || status >= 300) throw new Error();
             return data;
         } catch (error) {
-            console.dir(error);
+            notifications.error();
             return null;
         }
+    };
+
+    reset = (): void => {
+        this.files = [];
     };
 }

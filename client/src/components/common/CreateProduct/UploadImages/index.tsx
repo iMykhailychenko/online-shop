@@ -44,32 +44,34 @@ const UploadImages = (): ReactElement => {
 
     return (
         <div className={css.root}>
-            {uploads.files.length ? (
-                <div className={css.flex}>
-                    {uploads.files.map<ReactElement>(file => (
-                        <ImageItem key={file.name} file={file} uploads={uploads} />
-                    ))}
-                </div>
-            ) : (
-                <p className={css.empty}>No photos</p>
-            )}
+            <div className={css.sticky}>
+                {uploads.files.length ? (
+                    <div className={css.flex}>
+                        {uploads.files.map<ReactElement>(file => (
+                            <ImageItem key={file.name} file={file} uploads={uploads} />
+                        ))}
+                    </div>
+                ) : (
+                    <p className={css.empty}>No photos</p>
+                )}
 
-            <form className={css.form} action="#" method="post">
-                <label className={css.label}>
-                    <h2 className={css.title}>Upload product images:</h2>
-                    <input
-                        ref={ref}
-                        onChange={change}
-                        className={css.input}
-                        type="file"
-                        multiple
-                        accept=".jpg, .jpeg, .png"
-                    />
-                    <button className={css.btn} onClick={click} type="button">
-                        Click to upload
-                    </button>
-                </label>
-            </form>
+                <form className={css.form} action="#" method="post">
+                    <label className={css.label}>
+                        <h2 className={css.title}>Upload product images:</h2>
+                        <input
+                            ref={ref}
+                            onChange={change}
+                            className={css.input}
+                            type="file"
+                            multiple
+                            accept=".jpg, .jpeg, .png"
+                        />
+                        <button className={css.btn} onClick={click} type="button">
+                            Click to upload
+                        </button>
+                    </label>
+                </form>
+            </div>
         </div>
     );
 };

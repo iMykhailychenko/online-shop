@@ -1857,6 +1857,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-notifications-component@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@types/react-notifications-component/-/react-notifications-component-3.1.0.tgz#f8d4dd4abacb598c9890c6a1e157e6af6b4012ab"
+  integrity sha512-8Wj7wV5txs/EGjsyf2GSN92E23+yOL7xS1CtZQTAxx9l6gQYPkBzHdnT/NNd7cjfYv4aQET0cHBOidCjkPwYUw==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-paginate@^7.1.0":
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/@types/react-paginate/-/react-paginate-7.1.0.tgz#e209fe9735f0a68633c82c419ba238133b3b31a1"
@@ -9233,6 +9240,11 @@ react-is@^17.0.1:
   version "17.0.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz#5b3531bd76a645a4c9fb6e693ed36419e3301339"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
+
+react-notifications-component@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/react-notifications-component/-/react-notifications-component-3.1.0.tgz#c676b7897a3fb10c554b69dba25fe2a9da6170e2"
+  integrity sha512-qq+zgqVIa2zhlw+RvO2QSPk7xHLvZWTHl9VKRO56sMUef/UrcUTqOswL0DSJtRIpZYZhclquQUfDxD6H2w8aWA==
 
 react-paginate@^7.1.2:
   version "7.1.2"

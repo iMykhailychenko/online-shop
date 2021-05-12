@@ -1,7 +1,9 @@
+import 'react-notifications-component/dist/theme.css';
 import './styles/styles.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ReactNotification from 'react-notifications-component';
 
 import ModalComponent from './components/common/Modal';
 import App from './components/root/App';
@@ -10,6 +12,7 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
     <React.StrictMode>
         <ModalComponent />
+        <ReactNotification />
         <App />
     </React.StrictMode>,
     document.getElementById('root'),
