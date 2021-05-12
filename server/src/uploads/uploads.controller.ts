@@ -1,4 +1,4 @@
-import { Controller, Post, UploadedFiles, UseInterceptors } from '@nestjs/common';
+import { Controller, Get, Param, Post, Res, UploadedFiles, UseInterceptors } from '@nestjs/common';
 import { FilesInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
 import { join } from 'path';
@@ -17,6 +17,11 @@ export class UploadsController {
         }),
     )
     uploadFile(@UploadedFiles() files: Express.Multer.File[]): string[] {
-        return files.map(file => file.filename);
+        return files.map(file => `/api/uploads/${file.filename}`);
+    }
+
+    @Get(':fileId')
+    async serveAvatar(@Param('fileId') fileId, @Res() res): Promise<any> {
+        res.sendFile(fileId, { root: 'uploads' });
     }
 }

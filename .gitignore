@@ -2,6 +2,7 @@
 # dist
 node_modules
 server/client/
+server/uploads/
 client/build/
 dist
 

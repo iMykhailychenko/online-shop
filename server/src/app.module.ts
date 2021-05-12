@@ -16,15 +16,10 @@ import { UploadsController } from './uploads/uploads.controller';
 @Module({
     imports: [
         ConfigModule.forRoot({ isGlobal: true }),
-        ServeStaticModule.forRoot(
-            {
-                rootPath: join(__dirname, '..', '..', 'client'),
-                exclude: ['/api*'],
-            },
-            {
-                rootPath: join(__dirname, '..', '..', 'uploads'),
-            },
-        ),
+        ServeStaticModule.forRoot({
+            rootPath: join(__dirname, '..', '..', 'client'),
+            exclude: ['/api*'],
+        }),
         TypeOrmModule.forRoot({
             type: 'postgres',
             entities: [Product, Pictures, Sizes],
