@@ -1,7 +1,6 @@
 import { makeAutoObservable } from 'mobx';
 
 import api from '../../assets/api';
-import notifications from '../../components/common/Notifications';
 import { IUploads } from './uploads.types';
 
 export default class Uploads implements IUploads {
@@ -29,7 +28,6 @@ export default class Uploads implements IUploads {
             if (status < 200 || status >= 300) throw new Error();
             return data;
         } catch (error) {
-            notifications.error();
             return null;
         }
     };

@@ -22,10 +22,6 @@ const ProductItem = ({ product }: IProps): ReactElement => {
     const cart = useStore<ICart>(state => state.cart);
     const products = useStore<IProducts>(state => state.products);
     const amount = product.amount || 1;
-    const available = product.sizes.reduce((acc, item) => {
-        acc += item.amount;
-        return acc;
-    }, 0);
 
     const toggleValue = (value: string | number): void => {
         products.amount(product.id, +value);
@@ -33,7 +29,7 @@ const ProductItem = ({ product }: IProps): ReactElement => {
     };
 
     const handleDeleteFromCart = (): void => {
-        cart.delete(product.id);
+        cart.delete(product.id, product.selectedSize?.size);
     };
 
     return (
@@ -45,11 +41,14 @@ const ProductItem = ({ product }: IProps): ReactElement => {
                         <h3 className={css.name}>{product.title}</h3>
                     </Link>
                     <div className={css.flex}>
+                        <p>Size: {product.selectedSize?.size?.toUpperCase()}</p>
+                    </div>
+                    <div className={css.flex}>
                         <p>{moneyFormat(Math.round(product.price * (amount || 1) * 100) / 100)} $</p>
-                        <p>available: {available}</p>
+                        <p>available: {product.selectedSize?.amount}</p>
                     </div>
                     <div className={clsx(css.flex, css.count)}>
-                        <CountButtons max={available} value={amount} onChange={toggleValue} />
+                        <CountButtons max={product.selectedSize?.amount || 0} value={amount} onChange={toggleValue} />
                         <div className={css.action}>
                             <button className={css.cart} type="button" onClick={handleDeleteFromCart}>
                                 <FontAwesomeIcon icon={faMinus} />

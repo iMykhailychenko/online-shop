@@ -4,9 +4,8 @@ export default interface ICart {
     drawer: boolean;
     amount: number;
     products: IProduct[];
-    productsId: number[];
     push: (product: IProduct) => void;
-    delete: (id: number) => void;
+    delete: (id: number, size?: string) => void;
     toggleCart: () => void;
     countAmount: (products: IProduct[]) => void;
 }

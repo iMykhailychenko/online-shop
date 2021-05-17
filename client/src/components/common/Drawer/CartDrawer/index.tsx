@@ -27,7 +27,7 @@ const CartDrawer = (): ReactElement => {
                 </p>
                 <ul className={css.list}>
                     {cart.products.map(item => (
-                        <ProductItem key={item.id} product={item} />
+                        <ProductItem key={item.id + (item.selectedSize?.size || '')} product={item} />
                     ))}
                 </ul>
             </>

@@ -14,16 +14,21 @@ export default class Cart implements ICart {
     }
 
     push = (product: IProduct): void => {
-        const inCart = this.products.find(item => item.id === product.id);
+        const inCart = this.products.find(
+            item => item.id === product.id && product.selectedSize?.size === item.selectedSize?.size,
+        );
 
         if (inCart) {
             if (!product.amount) {
-                this.products = this.products.filter(item => item.id !== product.id);
-                this.productsId = this.productsId.filter(item => item !== product.id);
+                this.products = this.products.filter(
+                    item => item.id !== product.id && product.selectedSize?.size !== item.selectedSize?.size,
+                );
                 this.countAmount();
                 return;
             }
-            this.products = this.products.map(item => (item.id === product.id ? product : item));
+            this.products = this.products.map(item =>
+                item.id === product.id && product.selectedSize?.size === item.selectedSize?.size ? product : item,
+            );
             this.countAmount();
             return;
         }
@@ -34,13 +39,11 @@ export default class Cart implements ICart {
         }
 
         this.products.push(product);
-        this.productsId.push(product.id);
         this.countAmount();
     };
 
-    delete = (id: number): void => {
-        this.products = this.products.filter(item => item.id !== id);
-        this.productsId = this.productsId.filter(item => item !== id);
+    delete = (id: number, size?: string): void => {
+        this.products = this.products.filter(item => !(item.id === id && item.selectedSize?.size === size));
         this.countAmount();
     };
 

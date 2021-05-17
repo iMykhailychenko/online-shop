@@ -20,6 +20,7 @@ export interface IProduct {
     sizes: ISizes[];
     // local
     amount?: number;
+    selectedSize?: ISizes;
 }
 
 export interface Params {

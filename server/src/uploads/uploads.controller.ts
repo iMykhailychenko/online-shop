@@ -11,7 +11,7 @@ export class UploadsController {
             storage: diskStorage({
                 destination: join(__dirname, '..', '..', '..', 'uploads'),
                 filename(req, file, cb) {
-                    cb(null, `IMG_${Date.now()}_${file.originalname}`);
+                    cb(null, `IMG_${Date.now()}_${file.originalname.slice(0, 20)}`);
                 },
             }),
         }),

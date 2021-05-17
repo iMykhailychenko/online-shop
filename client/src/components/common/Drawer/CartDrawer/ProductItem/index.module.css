@@ -49,6 +49,14 @@
     color: var(--gray-05);
 }
 
+.card * {
+    font-size: 1.4rem;
+}
+
 .cart:hover {
     background: var(--gray-02);
+}
+
+.name {
+    font-size: 1.6rem;
 }
