@@ -1,0 +1,41 @@
+@keyframes loading {
+    0% {
+        background: var(--gray-02);
+    }
+
+    50% {
+        background: var(--gray-03);
+    }
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+}
+
+.flex > div {
+    width: 48%;
+}
+
+.img {
+    height: 40rem;
+    background: var(--gray-02);
+    animation: loading 3s ease-in-out infinite;
+}
+
+.text {
+    height: 2.5rem;
+    width: 100%;
+    background: var(--gray-02);
+    border-radius: var(--radius);
+    animation: loading 3s ease-in-out infinite;
+}
+
+.text:not(:nth-of-type(1)) {
+    margin: 2rem 0;
+}
+
+.short {
+    width: 50%;
+}

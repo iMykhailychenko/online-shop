@@ -58,7 +58,7 @@ const ProductCard = ({ product }: IProps): ReactElement => {
 
     return (
         <div className={css.card}>
-            <ParallaxPicture src={product.banner} alt={product.title} images={product.pictures} />
+            <ParallaxPicture id={product.id} src={product.banner} alt={product.title} images={product.pictures} />
 
             <Link className={css.content} to={router.product.single.dynamic(product.id)}>
                 <h3 className={css.name}>{product.title}</h3>

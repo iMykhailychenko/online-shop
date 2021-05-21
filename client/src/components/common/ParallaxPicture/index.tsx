@@ -1,19 +1,25 @@
 import { faExpandArrowsAlt } from '@fortawesome/free-solid-svg-icons/faExpandArrowsAlt';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { observer } from 'mobx-react-lite';
 import React, { MouseEvent, ReactElement, useRef } from 'react';
 
+import useStore from '../../../hooks/store.hook';
+import IProducts from '../../../store/products/products.types';
 import { modal } from '../Modal';
 import BigModal from '../Modal/Wrp/BigModal';
+import ProductModal from '../ProductModal';
 import css from './index.module.css';
 
 interface IProps {
+    id: number;
     src: string;
     alt?: string;
     images?: string[];
 }
 
-const ParallaxPicture = ({ src, alt }: IProps): ReactElement => {
+const ParallaxPicture = ({ id, src, alt }: IProps): ReactElement => {
     const ref = useRef<HTMLDivElement>(null);
+    const products = useStore<IProducts>(state => state.products);
 
     const startRotate = (event: MouseEvent<HTMLDivElement>) => {
         if (!ref.current) return;
@@ -29,11 +35,10 @@ const ParallaxPicture = ({ src, alt }: IProps): ReactElement => {
     };
 
     const handleModal = (): void => {
+        products.findById(id);
         modal.open(
             <BigModal>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, animi beatae deleniti eveniet
-                exercitationem harum id illo molestias mollitia neque perferendis quas saepe voluptatem? Atque
-                distinctio esse quas quis tenetur?
+                <ProductModal />
             </BigModal>,
         );
     };
@@ -59,4 +64,4 @@ const ParallaxPicture = ({ src, alt }: IProps): ReactElement => {
     );
 };
 
-export default ParallaxPicture;
+export default observer(ParallaxPicture);

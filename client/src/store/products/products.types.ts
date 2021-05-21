@@ -1,9 +1,9 @@
-import { IProduct, Pagination } from '../../interface';
+import { IProduct, ISingleProduct, Pagination } from '../../interface';
 
 export default interface IProducts {
     loading: boolean;
     products: Pagination<IProduct[]>;
-    single: IProduct | null;
+    single: ISingleProduct | null;
     element: HTMLDivElement | null;
 
     setElement: (dom: HTMLDivElement) => void;

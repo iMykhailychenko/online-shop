@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from 'axios';
 
-import { IProduct, Pagination, Params } from '../interface';
+import { IProduct, ISingleProduct, Pagination, Params } from '../interface';
 
 axios.defaults.baseURL = '/api';
 
@@ -9,7 +9,7 @@ const api = {
     uploads: (form: FormData): Promise<AxiosResponse<string[]>> => axios.post('/uploads', form),
     products: {
         get: (params: Params): Promise<AxiosResponse<Pagination<IProduct[]>>> => axios.get('/products', { params }),
-        single: (id: number): Promise<AxiosResponse<IProduct>> => axios.get('/products/' + id),
+        single: (id: number): Promise<AxiosResponse<ISingleProduct>> => axios.get('/products/' + id),
         create: (body: Omit<IProduct, 'id'>): Promise<AxiosResponse<void>> => axios.post('/products', body),
     },
 };

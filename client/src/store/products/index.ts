@@ -3,13 +3,13 @@ import { makeAutoObservable } from 'mobx';
 import api from '../../assets/api';
 import config from '../../assets/config';
 import notifications from '../../components/common/Notifications';
-import { IProduct, Pagination, Params } from '../../interface';
+import { IProduct, ISingleProduct, Pagination, Params } from '../../interface';
 import IProducts from './products.types';
 
 export default class Products implements IProducts {
     public loading = true;
     public products: Pagination<IProduct[]> = { total: 0, page: 0, data: [] };
-    public single: IProduct | null = null;
+    public single: ISingleProduct | null = null;
     public element: HTMLDivElement | null = null;
 
     constructor() {

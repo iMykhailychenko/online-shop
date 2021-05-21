@@ -23,6 +23,10 @@ export interface IProduct {
     selectedSize?: ISizes;
 }
 
+export type ISingleProduct = Omit<IProduct, 'pictures'> & {
+    pictures: { id: number; url: string }[];
+};
+
 export interface Params {
     [key: string]: unknown;
 }
