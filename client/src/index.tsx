@@ -1,15 +1,20 @@
 import 'react-notifications-component/dist/theme.css';
 import './styles/styles.css';
 
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 import App from './components/root/App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
     <React.StrictMode>
-        <App />
+        <Suspense fallback={null}>
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+        </Suspense>
     </React.StrictMode>,
     document.getElementById('root'),
 );
