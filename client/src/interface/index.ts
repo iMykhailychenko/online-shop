@@ -16,16 +16,14 @@ export interface IProduct {
     title: string;
     description: string;
     rating: number;
-    pictures: string[];
+    pictures: { id: number; url: string }[];
     sizes: ISizes[];
     // local
     amount?: number;
     selectedSize?: ISizes;
 }
 
-export type ISingleProduct = Omit<IProduct, 'pictures'> & {
-    pictures: { id: number; url: string }[];
-};
+export type IUploadProduct = Omit<IProduct, 'id' | 'pictures'> & { pictures: string[] };
 
 export interface Params {
     [key: string]: unknown;

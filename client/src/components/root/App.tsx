@@ -1,8 +1,10 @@
 import React, { ReactElement, Suspense } from 'react';
+import ReactNotification from 'react-notifications-component';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import router from '../../assets/router';
 import CartDrawer from '../common/Drawer/CartDrawer';
+import ModalComponent from '../common/Modal';
 import ScrollCart from '../common/ScrollCart';
 import ScrollTop from '../common/ScrollTopBtn';
 import Body from '../layout/Body';
@@ -33,6 +35,10 @@ const App = (): ReactElement => {
                     <ScrollCart />
                     <ScrollTop />
                     <Footer />
+
+                    {/* Utils */}
+                    <ModalComponent />
+                    <ReactNotification />
                 </div>
             </BrowserRouter>
         </Suspense>

@@ -1,9 +1,9 @@
-import { IProduct, ISingleProduct, Pagination } from '../../interface';
+import { IProduct, IUploadProduct, Pagination } from '../../interface';
 
 export default interface IProducts {
     loading: boolean;
     products: Pagination<IProduct[]>;
-    single: ISingleProduct | null;
+    single: IProduct | null;
     element: HTMLDivElement | null;
 
     setElement: (dom: HTMLDivElement) => void;
@@ -11,5 +11,5 @@ export default interface IProducts {
     more: (page: number) => Promise<void>;
     findById: (id: number) => Promise<void>;
     amount: (id: number, amount: number) => void;
-    create: (product: Omit<IProduct, 'id'>) => Promise<void | null>;
+    create: (product: IUploadProduct) => Promise<void | null>;
 }

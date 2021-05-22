@@ -3,13 +3,13 @@ import { makeAutoObservable } from 'mobx';
 import api from '../../assets/api';
 import config from '../../assets/config';
 import notifications from '../../components/common/Notifications';
-import { IProduct, ISingleProduct, Pagination, Params } from '../../interface';
+import { IProduct, IUploadProduct, Pagination, Params } from '../../interface';
 import IProducts from './products.types';
 
 export default class Products implements IProducts {
     public loading = true;
     public products: Pagination<IProduct[]> = { total: 0, page: 0, data: [] };
-    public single: ISingleProduct | null = null;
+    public single: IProduct | null = null;
     public element: HTMLDivElement | null = null;
 
     constructor() {
@@ -58,10 +58,11 @@ export default class Products implements IProducts {
     };
 
     amount = (id: number, amount: number): void => {
+        if (id === this.single?.id) this.single.amount = amount;
         this.products.data = this.products.data.map<IProduct>(item => (item.id === id ? { ...item, amount } : item));
     };
 
-    create = async (product: Omit<IProduct, 'id'>): Promise<void | null> => {
+    create = async (product: IUploadProduct): Promise<void | null> => {
         try {
             const { status } = await api.products.create(product);
             if (status < 200 || status >= 300) throw new Error();

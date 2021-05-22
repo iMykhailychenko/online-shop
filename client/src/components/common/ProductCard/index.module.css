@@ -11,45 +11,11 @@
     text-decoration: underline;
 }
 
-.flex {
-    display: flex;
-    justify-content: space-between;
-    width: calc(100% - 8rem);
-    margin: 2rem 4rem;
-}
-
-.cart,
-.bay {
-    padding: 0.5rem 2rem;
-    font-weight: 500;
-    transition: 0.3s ease-in-out;
-}
-
-.bay {
-    color: var(--white);
-    background: var(--blue);
-}
-
-.cart {
-    margin-right: 1rem;
-    color: var(--gray-05);
-}
-
-.cart:hover {
-    background: var(--gray-02);
-}
-
 .name {
     margin-bottom: 2rem;
 }
 
-.select {
-    display: block;
-    min-width: 20%;
-    max-width: 100%;
-    cursor: pointer;
-    padding: 0.5rem 1rem;
-    background: var(--gray-02);
-    border-radius: var(--radius);
-    border: none;
+.utils {
+    width: calc(100% - 8rem);
+    margin: 0 4rem;
 }

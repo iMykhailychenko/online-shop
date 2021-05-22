@@ -1,0 +1,8 @@
+.wrp {
+    position: revert;
+}
+
+.img {
+    max-height: 80rem;
+    object-fit: contain;
+}

@@ -11,7 +11,7 @@ import useStore from '../../../../../hooks/store.hook';
 import { IProduct } from '../../../../../interface';
 import ICart from '../../../../../store/cart/cart.types';
 import IProducts from '../../../../../store/products/products.types';
-import CountButtons from '../../../CountButtons';
+import CountButtons from '../../../ProductCard/CountButtons';
 import css from './index.module.css';
 
 interface IProps {

@@ -10,3 +10,6 @@ export const moneyFormat = (value: string | number = 0): string => {
 
     return float[1] ? value + '.' + float[1] : value + '.00';
 };
+
+export const cutString = (value: string, max: number): string =>
+    value.length > max ? value.slice(0, max - 1) + '...' : value;

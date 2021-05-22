@@ -4,8 +4,8 @@ import React, { ChangeEvent, ReactElement } from 'react';
 import css from './index.module.css';
 
 interface IProps {
-    className?: string;
     max: number;
+    className?: string;
     value: number | string;
     onChange: (value: number | string) => void;
 }
