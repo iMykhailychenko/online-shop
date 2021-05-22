@@ -1,5 +1,4 @@
 import { IsArray, IsInt, IsString } from 'class-validator';
-import { Sizes } from '../entities/sizes.entity';
 
 export class PaginationDto {
     @IsInt()
