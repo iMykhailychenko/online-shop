@@ -14,12 +14,12 @@ export class ProductsController {
     }
 
     @Get(':id')
-    async findById(@Param() params) {
+    async findById(@Param() params): Promise<Product> {
         return await this.productsService.findById(params.id);
     }
 
     @Post()
-    async createProduct(@Body() product: ProductDto) {
+    async createProduct(@Body() product: ProductDto): Promise<Product> {
         return await this.productsService.createProduct(product);
     }
 }

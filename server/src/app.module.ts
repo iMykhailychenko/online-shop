@@ -12,6 +12,8 @@ import { Product } from './products/entities/products.entity';
 import { Pictures } from './products/entities/pictures.entity';
 import { Sizes } from './products/entities/sizes.entity';
 import { UploadsController } from './uploads/uploads.controller';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
     imports: [
@@ -27,6 +29,8 @@ import { UploadsController } from './uploads/uploads.controller';
         }),
         PicturesModule,
         ProductsModule,
+        AuthModule,
+        UsersModule,
     ],
     controllers: [UploadsController],
     providers: [],
