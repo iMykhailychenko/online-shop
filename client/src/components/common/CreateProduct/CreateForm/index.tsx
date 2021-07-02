@@ -5,8 +5,8 @@ import React, { ChangeEvent, FormEvent, ReactElement, useState } from 'react';
 
 import useStore from '../../../../hooks/store.hook';
 import { IProduct, ISizes } from '../../../../interface';
-import IProducts from '../../../../store/products/products.types';
-import { IUploads } from '../../../../store/uploads/uploads.types';
+import { Products } from '../../../../store/products';
+import { Uploads } from '../../../../store/uploads';
 import Input from '../../Input/input';
 import Textarea from '../../Input/textarea';
 import notifications from '../../Notifications';
@@ -25,8 +25,8 @@ const INIT: Omit<IProduct, 'id'> = {
 };
 
 const CreateForm = (): ReactElement => {
-    const upload = useStore<IUploads>(state => state.uploads);
-    const products = useStore<IProducts>(state => state.products);
+    const upload = useStore<Uploads>(state => state.uploads);
+    const products = useStore<Products>(state => state.products);
 
     const [value, setValue] = useState<Omit<IProduct, 'id'>>(INIT);
     const [error, setError] = useState<IError>({});

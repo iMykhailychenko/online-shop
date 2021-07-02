@@ -2,9 +2,14 @@ import { makeAutoObservable } from 'mobx';
 
 import api from '../../assets/api';
 import notifications from '../../components/common/Notifications';
-import IPictures from './pictures.types';
 
-export default class Pictures implements IPictures {
+export interface IPictures {
+    index: number;
+    src: string | null;
+    setPicture: () => Promise<void>;
+}
+
+export class Pictures implements IPictures {
     public index = 0;
     public src: string | null = null;
 

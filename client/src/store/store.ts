@@ -1,8 +1,14 @@
-import Cart from './cart';
-import Pictures from './pictures';
-import Products from './products';
-import IStore from './store.types';
-import Uploads from './uploads';
+import { Cart } from './cart';
+import { Pictures } from './pictures';
+import { Products } from './products';
+import { Uploads } from './uploads';
+
+export interface IStore {
+    cart: Cart;
+    pictures: Pictures;
+    products: Products;
+    uploads: Uploads;
+}
 
 class Store implements IStore {
     constructor(

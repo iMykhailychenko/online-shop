@@ -2,13 +2,13 @@ import { observer } from 'mobx-react-lite';
 import React, { ChangeEvent, ReactElement, useRef } from 'react';
 
 import useStore from '../../../../hooks/store.hook';
-import { IUploads } from '../../../../store/uploads/uploads.types';
+import { Uploads } from '../../../../store/uploads';
 import CloseButton from '../../CloseButton';
 import css from './index.module.css';
 
 interface IProps {
     file: File;
-    uploads: IUploads;
+    uploads: Uploads;
 }
 const ImageItem = ({ file, uploads }: IProps): ReactElement => {
     const click = (): void => {
@@ -25,7 +25,7 @@ const ImageItem = ({ file, uploads }: IProps): ReactElement => {
 
 const UploadImages = (): ReactElement => {
     const ref = useRef<HTMLInputElement>(null);
-    const uploads = useStore<IUploads>(state => state.uploads);
+    const uploads = useStore<Uploads>(state => state.uploads);
 
     const click = (): void => {
         if (ref.current) {

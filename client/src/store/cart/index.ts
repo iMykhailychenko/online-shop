@@ -1,9 +1,18 @@
 import { makeAutoObservable } from 'mobx';
 
 import { IProduct } from '../../interface';
-import ICart from './cart.types';
 
-export default class Cart implements ICart {
+export interface ICart {
+    drawer: boolean;
+    amount: number;
+    products: IProduct[];
+    push: (product: IProduct) => void;
+    delete: (id: number, size?: string) => void;
+    toggleCart: () => void;
+    countAmount: (products: IProduct[]) => void;
+}
+
+export class Cart implements ICart {
     public drawer = false;
     public amount = 0;
     public products: IProduct[] = [];

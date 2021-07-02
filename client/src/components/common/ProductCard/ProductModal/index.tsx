@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { cutString } from '../../../../assets/helpers';
 import router from '../../../../assets/router';
 import useStore from '../../../../hooks/store.hook';
-import IProducts from '../../../../store/products/products.types';
+import { Products } from '../../../../store/products';
 import ProductModalLoader from '../../Loaders/ProductModalLoader';
 import ProductSlider from '../ProductSlider';
 import ProductUtils from '../ProductUtils';
@@ -14,7 +14,7 @@ import css from './index.module.css';
 const MAX_LENGTH = 100;
 const ProductModal = (): ReactElement => {
     const [maxText, setMaxText] = useState<number>(MAX_LENGTH);
-    const products = useStore<IProducts>(state => state.products);
+    const products = useStore<Products>(state => state.products);
     const hasReadMoreBtn = (products.single?.description?.length || 0) > MAX_LENGTH;
 
     const readMore = (): void => {

@@ -1,5 +1,4 @@
-import store from '../store/store';
-import IStore from '../store/store.types';
+import store, { IStore } from '../store/store';
 
 const useStore = <T>(selector: (store: IStore) => T): T => {
     return selector(store);

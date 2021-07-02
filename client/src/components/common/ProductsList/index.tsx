@@ -2,13 +2,13 @@ import { observer } from 'mobx-react-lite';
 import React, { ReactElement } from 'react';
 
 import useStore from '../../../hooks/store.hook';
-import IProducts from '../../../store/products/products.types';
+import { Products } from '../../../store/products';
 import ProductsLoader from '../Loaders/ProductsLoader';
 import Pagination from '../Pagination';
 import ProductCard from '../ProductCard';
 
 const ProductsList = (): ReactElement => {
-    const products = useStore<IProducts>(state => state.products);
+    const products = useStore<Products>(state => state.products);
 
     return (
         <>

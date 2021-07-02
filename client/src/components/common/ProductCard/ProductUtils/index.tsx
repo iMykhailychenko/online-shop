@@ -7,8 +7,8 @@ import React, { ChangeEvent, ReactElement, useState } from 'react';
 import { moneyFormat } from '../../../../assets/helpers';
 import useStore from '../../../../hooks/store.hook';
 import { IProduct, ISizes } from '../../../../interface';
-import ICart from '../../../../store/cart/cart.types';
-import IProducts from '../../../../store/products/products.types';
+import { Cart } from '../../../../store/cart';
+import { Products } from '../../../../store/products';
 import CountButtons from '../CountButtons';
 import css from './index.module.css';
 
@@ -18,8 +18,8 @@ interface IProps {
 
 const ProductUtils = ({ product }: IProps): ReactElement => {
     const amount = product.amount || 1;
-    const cart = useStore<ICart>(state => state.cart);
-    const products = useStore<IProducts>(state => state.products);
+    const cart = useStore<Cart>(state => state.cart);
+    const products = useStore<Products>(state => state.products);
     const [available, setAvailable] = useState<ISizes>(product.sizes[0]);
 
     const handleSelectSize = (event: ChangeEvent<HTMLSelectElement>): void => {

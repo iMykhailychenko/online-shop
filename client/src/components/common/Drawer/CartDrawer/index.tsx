@@ -3,13 +3,13 @@ import React, { ReactElement } from 'react';
 
 import { moneyFormat } from '../../../../assets/helpers';
 import useStore from '../../../../hooks/store.hook';
-import ICart from '../../../../store/cart/cart.types';
+import { Cart } from '../../../../store/cart';
 import Drawer from '../index';
 import css from './index.module.css';
 import ProductItem from './ProductItem';
 
 const CartDrawer = (): ReactElement => {
-    const cart = useStore<ICart>(state => state.cart);
+    const cart = useStore<Cart>(state => state.cart);
     const totalPrice = cart.products.reduce((acc, item) => {
         acc += item.price * (item.amount || 1);
         return acc;

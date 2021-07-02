@@ -4,9 +4,22 @@ import api from '../../assets/api';
 import config from '../../assets/config';
 import notifications from '../../components/common/Notifications';
 import { IProduct, IUploadProduct, Pagination, Params } from '../../interface';
-import IProducts from './products.types';
 
-export default class Products implements IProducts {
+export interface IProducts {
+    loading: boolean;
+    products: Pagination<IProduct[]>;
+    single: IProduct | null;
+    element: HTMLDivElement | null;
+
+    setElement: (dom: HTMLDivElement) => void;
+    push: (page: number) => Promise<void>;
+    more: (page: number) => Promise<void>;
+    findById: (id: number) => Promise<void>;
+    amount: (id: number, amount: number) => void;
+    create: (product: IUploadProduct) => Promise<void | null>;
+}
+
+export class Products implements IProducts {
     public loading = true;
     public products: Pagination<IProduct[]> = { total: 0, page: 0, data: [] };
     public single: IProduct | null = null;

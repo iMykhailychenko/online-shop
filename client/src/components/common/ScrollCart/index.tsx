@@ -5,7 +5,7 @@ import React, { ReactElement, useEffect, useRef, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 import useStore from '../../../hooks/store.hook';
-import ICart from '../../../store/cart/cart.types';
+import { Cart } from '../../../store/cart';
 import pop from '../../../styles/transitions/pop.module.css';
 import NumberCircle from '../NumberCircle';
 import css from './index.module.css';
@@ -13,7 +13,7 @@ import css from './index.module.css';
 const ScrollCart = (): ReactElement => {
     const buttonRef = useRef<HTMLButtonElement | null>(null);
     const [top, setTop] = useState(false);
-    const cart = useStore<ICart>(state => state.cart);
+    const cart = useStore<Cart>(state => state.cart);
 
     useEffect(() => {
         const handleScroll = (): void => setTop(window.scrollY >= 150);

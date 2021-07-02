@@ -9,8 +9,8 @@ import { moneyFormat } from '../../../../../assets/helpers';
 import router from '../../../../../assets/router';
 import useStore from '../../../../../hooks/store.hook';
 import { IProduct } from '../../../../../interface';
-import ICart from '../../../../../store/cart/cart.types';
-import IProducts from '../../../../../store/products/products.types';
+import { Cart } from '../../../../../store/cart';
+import { Products } from '../../../../../store/products';
 import CountButtons from '../../../ProductCard/CountButtons';
 import css from './index.module.css';
 
@@ -19,8 +19,8 @@ interface IProps {
 }
 
 const ProductItem = ({ product }: IProps): ReactElement => {
-    const cart = useStore<ICart>(state => state.cart);
-    const products = useStore<IProducts>(state => state.products);
+    const cart = useStore<Cart>(state => state.cart);
+    const products = useStore<Products>(state => state.products);
     const amount = product.amount || 1;
 
     const toggleValue = (value: string | number): void => {

@@ -9,8 +9,8 @@ import AnchorLink from 'react-scroll/modules/components/Link';
 
 import router from '../../../assets/router';
 import useStore from '../../../hooks/store.hook';
-import ICart from '../../../store/cart/cart.types';
-import IProducts from '../../../store/products/products.types';
+import { Cart } from '../../../store/cart';
+import { Products } from '../../../store/products';
 import Logo from '../../common/Logo';
 import NumberCircle from '../../common/NumberCircle';
 import Container from '../Container';
@@ -21,8 +21,8 @@ const Header = (): ReactElement => {
     const history = useHistory();
     const [location, setLoading] = useState<Location>(history.location);
 
-    const cart = useStore<ICart>(state => state.cart);
-    const products = useStore<IProducts>(state => state.products);
+    const cart = useStore<Cart>(state => state.cart);
+    const products = useStore<Products>(state => state.products);
 
     useEffect(() => {
         if (location.hash === '#products' && products.element) {

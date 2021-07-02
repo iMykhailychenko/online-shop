@@ -1,9 +1,16 @@
 import { makeAutoObservable } from 'mobx';
 
 import api from '../../assets/api';
-import { IUploads } from './uploads.types';
 
-export default class Uploads implements IUploads {
+export interface IUploads {
+    files: File[];
+    push: (file: File) => void;
+    delete: (name: string) => void;
+    submit: () => Promise<string[] | null>;
+    reset: () => void;
+}
+
+export class Uploads implements IUploads {
     public files: File[] = [];
     constructor() {
         makeAutoObservable(this);
