@@ -1,9 +1,11 @@
+import { Auth } from './auth';
 import { Cart } from './cart';
 import { Pictures } from './pictures';
 import { Products } from './products';
 import { Uploads } from './uploads';
 
 export interface IStore {
+    auth: Auth;
     cart: Cart;
     pictures: Pictures;
     products: Products;
@@ -12,6 +14,7 @@ export interface IStore {
 
 class Store implements IStore {
     constructor(
+        public readonly auth: Auth,
         public readonly cart: Cart,
         public readonly products: Products,
         public readonly pictures: Pictures,
@@ -19,4 +22,4 @@ class Store implements IStore {
     ) {}
 }
 
-export default new Store(new Cart(), new Products(), new Pictures(), new Uploads());
+export default new Store(new Auth(), new Cart(), new Products(), new Pictures(), new Uploads());

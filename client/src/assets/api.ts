@@ -1,10 +1,15 @@
 import axios, { AxiosResponse } from 'axios';
 
 import { IProduct, IUploadProduct, Pagination, Params } from '../interface';
+import { LoginBody, LoginResponse } from '../store/auth';
 
 axios.defaults.baseURL = '/api';
 
 const api = {
+    auth: {
+        login: (body: LoginBody): Promise<AxiosResponse<LoginResponse>> => axios.post('/auth/login', body),
+        join: (body: Body): Promise<AxiosResponse<Body>> => axios.post('/auth/join', body),
+    },
     pictures: (position: string | number): Promise<AxiosResponse<string>> => axios.get(`/pictures/${position}`),
     uploads: (form: FormData): Promise<AxiosResponse<string[]>> => axios.post('/uploads', form),
     products: {

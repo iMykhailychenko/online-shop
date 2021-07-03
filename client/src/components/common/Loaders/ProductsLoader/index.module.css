@@ -8,6 +8,10 @@
     }
 }
 
+.wrp {
+    padding: 4.4rem;
+}
+
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;

@@ -21,4 +21,7 @@ export default () => ({
             ssl: { require: Boolean(process.env.DB_SSL) },
         },
     },
+    auth: {
+        secret: process.env.SECRET_KEY,
+    },
 });

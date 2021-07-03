@@ -2,8 +2,11 @@ import { faEye } from '@fortawesome/free-regular-svg-icons/faEye';
 import { faEyeSlash } from '@fortawesome/free-regular-svg-icons/faEyeSlash';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
+import { observer } from 'mobx-react-lite';
 import React, { ChangeEvent, FormEvent, ReactElement, useState } from 'react';
 
+import useStore from '../../../../hooks/store.hook';
+import { Auth } from '../../../../store/auth';
 import Input from '../../Input/input';
 import { modal } from '../../Modal';
 import css from '../index.module.css';
@@ -24,6 +27,7 @@ const init: Value = {
 };
 
 const Login = (): ReactElement => {
+    const auth = useStore<Auth>(state => state.auth);
     const [type, setType] = useState('password');
 
     const [error, setError] = useState<Error>(init);
@@ -38,7 +42,7 @@ const Login = (): ReactElement => {
         setError({});
     };
 
-    const submit = (event: FormEvent): void => {
+    const submit = async (event: FormEvent): Promise<void> => {
         event.preventDefault();
 
         if (!input.email.trim()) {
@@ -51,7 +55,7 @@ const Login = (): ReactElement => {
             return;
         }
 
-        console.log('assasas');
+        await auth.login(input);
     };
 
     return (
@@ -101,4 +105,4 @@ const Login = (): ReactElement => {
     );
 };
 
-export default Login;
+export default observer(Login);
